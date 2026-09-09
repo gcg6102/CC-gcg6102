@@ -3,12 +3,12 @@
 
 const quotes = [
   { text: "use of coding languages for artistic expression as a medium", source: "Val" },
-  { text: "doesn't have boundaries and allows you to be satisfyingly free in expression without a rubric or template", source: "Lucky" },
+  { text: "be satisfyingly free in expression without a rubric or template", source: "Lucky" },
   { text: "coding for art, whimsy, and joy, no profit", source: "Tai" },
   { text: "technology to create different methods of art intersections", source: "Alexandra" },
-  { text: "produce innovative products and methods outside the typical historical cannon of coding", source: "Genevieve" },
+  { text: "produce innovative products outside typical historical cannon of coding", source: "Genevieve" },
   { text: "coding that is not use for artifical means", source: "Camilla" },
-  { text: "coding that expands beyond finite solutions, expanding one's sight and ultimately allowing for creative exploration through code", source: "Geanna" },
+  { text: "coding that expands beyond finite solutions, allowing for creative exploration through code", source: "Geanna" },
   { text: "colorful coding", source: "Renata" }
 ];
 // no need to edit anything below this line! 
