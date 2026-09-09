@@ -3,11 +3,11 @@
 
 const quotes = [
   { text: "use of coding languages for artistic expression as a medium", source: "Val" },
-  { text: "be satisfyingly free in expression without a rubric or template", source: "Lucky" },
+  { text: "being satisfyingly free in expression without a rubric or template", source: "Lucky" },
   { text: "coding for art, whimsy, and joy, no profit", source: "Tai" },
   { text: "technology to create different methods of art intersections", source: "Alexandra" },
-  { text: "produce innovative products outside typical historical cannon of coding", source: "Genevieve" },
-  { text: "coding that is not use for artifical means", source: "Camilla" },
+  { text: "producing innovative products outside typical historical cannon of coding", source: "Genevieve" },
+  { text: "coding that is not used for artificial means", source: "Camilla" },
   { text: "coding that expands beyond finite solutions, allowing for creative exploration through code", source: "Geanna" },
   { text: "colorful coding", source: "Renata" }
 ];
@@ -41,6 +41,7 @@ function drawQuote() {   // draw text
   textAlign(CENTER, CENTER);
   text("Creative Coding is.....", width / 2, height / 2 - 48);
   textStyle(BOLD);
+  textFont('Courier New');
   text("'" + current.text + "'", width / 2, height / 2);
   textAlign(RIGHT, CENTER);
   text("-" + current.source, width - 100, height - 100);
