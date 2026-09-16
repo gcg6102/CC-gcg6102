@@ -135,7 +135,7 @@ function draw(){
 }
 function mouseDragged(){
   fill('violet');
-  ellipse(mouseX, mouseY,100,100);
+  ellipse(mouseX, mouseY,100,100); //built in variables mouseX and mouseY
   fill('black');
   ellipse(mouseX,mouseY, 50,50)
 }
