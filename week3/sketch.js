@@ -47,17 +47,6 @@ noStroke();
   circle++;
  // if(circleXpos>=width || circleXpos<=0)
 */
-
- function setup(){
-  createCanvas(800,600);
-  background(220); //white background
-  for(let i = 0; i <100; i+10+10){
-    ellipse(i*100 + 50,100,i*10+10);
-    //console.log(i); //stop drawing after we hit 1
-
-  }
- }
-
 /*
   function setup(){
   createCanvas(800,600);
@@ -66,4 +55,29 @@ noStroke();
     ellipse(i*100 + 50,100,100);
     console.log(i); //stop drawing after we hit 1
 
+  }
+}
+*/
+/*
+ function setup(){
+  createCanvas(800,600);
+  background(220); //white background
+  for(let i = 0; i <100; i+10+10){
+    ellipse(i*100 + 50,100,i*10+10);
+    //console.log(i); //stop drawing after we hit 1
+
+
   */
+
+    function draw(){
+      createCanvas(800,600);
+      background(220);
+      colorMode(HSB);
+      noFill();
+      for(let i = 0; i < 50; i++){
+        ellipse(width/2,height/2, i*10+2);
+      }
+      for(let i = 0; i < 50; i++){
+        ellipse(mouseX,mouseY, i*10+2);
+      }
+    }
