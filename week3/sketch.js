@@ -68,7 +68,7 @@ noStroke();
 
 
   */
-
+/*
     function draw(){
       createCanvas(800,600);
       background(220);
@@ -79,5 +79,64 @@ noStroke();
       }
       for(let i = 0; i < 50; i++){
         ellipse(mouseX,mouseY, i*10+2);
+        //makes spirals somethign to make autoamtion easier lowkey
+    */
+/*
+  let rot = 0.0;
+
+  function setup(){
+    createCanvas(800,600);
+    //colorMode(HSB);
+    noStroke();
+  };
+
+  function draw(){
+      background(220);
+      rect(CENTER);
+      for(let x = 0; x < 10; x++){
+        for(let y = 0; y < 7; y++){
+            rect(x*75+25, y*75+25, 50);
+            //repeatable, variation, and make something dymanic
+            //square boxes along the screen!!! nested loop
+            //updates the first y from each point while making a 3d array 
+        }
+        
       }
-    }
+      noLoop();
+     // console.log(frameCount); //will report back
+      //frame count can introduce something dymanic
+    };
+    */
+/* fill(360*(x*y/70, 100, 100)); //does rainbow
+            push();
+            translate(x*75+25, y*75+25);
+            rotate(rot);
+            rect(0,0,50);
+            pop();
+            rot+=0.02;
+            */
+
+
+ let x, y;
+ let width = 10;
+ let height = 20;
+ 
+ function setup(){
+    createCanvas(800,600);
+    background(220);
+    strokeWeight(2);
+    noFIll();
+  }
+
+  function draw(){
+    ellipse(xPos, yPos, 50); 
+    let xPos = ((sin(x)+1)/2)*width;
+    let yPos = ((cos(x)+1)/2)*height;
+    //what things do i find visually compelling?
+    //i love frutiger aero and stripes//p5polar library to put p5 into polar coordinates and a for loop
+    //cartesian vs. polar coordinated extra credit p5.js
+    //point(xPos, width/2);
+    //x+=incX;
+  }
+
+  
