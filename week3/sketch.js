@@ -95,7 +95,7 @@ noStroke();
       rect(CENTER);
       for(let x = 0; x < 10; x++){
         for(let y = 0; y < 7; y++){
-            rect(x*75+25, y*75+25, 50);
+            circle(x*75+25, y*75+25, 50);
             //repeatable, variation, and make something dymanic
             //square boxes along the screen!!! nested loop
             //updates the first y from each point while making a 3d array 
@@ -106,7 +106,7 @@ noStroke();
      // console.log(frameCount); //will report back
       //frame count can introduce something dymanic
     };
-    */
+  */
 /* fill(360*(x*y/70, 100, 100)); //does rainbow
             push();
             translate(x*75+25, y*75+25);
@@ -116,7 +116,7 @@ noStroke();
             rot+=0.02;
             */
 
-
+/*
  let x, y;
  let width = 10;
  let height = 20;
@@ -137,6 +137,59 @@ noStroke();
     //cartesian vs. polar coordinated extra credit p5.js
     //point(xPos, width/2);
     //x+=incX;
+    //us LLM, BO creative coding GRA office hours weekly friday 1pm-4pm
+  }
+*/
+/*
+function draw(){
+ for (i = 0; i < 300; i +=20){
+  rect(50, i + 200, 10);
+    for(y = 0; y < 400; y +=20){
+  circle(100, y + 200, 10);
+  }
+}
+}
+*/
+/*
+function setup(){
+  createCanvas(800,600);
+}
+
+function draw(){
+    for(let i = 0; i < 50; i++){
+      ellipse(width/2,height/2, i*10+2);
+      }
+    for(let i = 0; i < 50; i++){
+        ellipse(mouseX,mouseY, i*10+2);
+}
+}
+//pratice
+  */
+
+function setup(){
+  createCanvas(800,600);
+  colorMode(HSB);
+}
+function draw() {
+  background(150,100,100);
+  stroke(255, 0, 0);
+  strokeWeight(5);
+
+  for(i = 0; i < 10; i++){
+    //line(i+400,i*10,50,i*5);
+    for(s = 0; s < 10; s++){
+    ellipse(s*85, i*55, i * 4, i * 5);
+    fill('purple');
+    //rotate(65);
+  }
+    line(i-100,i*100,800,i+10);
+    //
+  for(y = 0; y < 10; y++){
+    //line(y+100, y+100, y + -100, y + 10);
+    ellipse(100)
   }
 
   
+
+}
+}
