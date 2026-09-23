@@ -14,7 +14,7 @@ function draw() {
     //line(i+400,i*10,50,i*5);
     for(s = 0; s < 10; s++){ //Nested loop to change the components of the ellipse and the line and coloring
     ellipse(s*85, i*55, i * 4, i * 5);
-    fill('purple'); 
+    fill('orange'); 
     //rotate(65);
   }
     line(i-100,i*100,800,i+10);
