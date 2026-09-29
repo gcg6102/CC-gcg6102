@@ -127,29 +127,42 @@ function draw() {
 //let rot = TWO_PI * noise(x*inc, y*inc);
 
 // Press any key to generate a new seed
+//code from in class
+
+//these look like UFOS lol
+
+/*
 let seed = 1234;
 
 function setup() {
     createCanvas(800, 600);
+     colorMode(HSB);
 }
 
 //allows you to section off changes in the code and makes code more legible
-function drawRectangle(_x, _y, _rot){ //passing values in function x, y, and rotation
+function drawCircle(xCir, yCir, rotCir){ //passing values in function x, y, and rotation
     // console.log(rot);
-    let localXpos = _x;
-    let localYpos = _y;
-    let localRot = _rot;
+    let localXpos = xCir;
+    let localYpos = yCir;
+    let localRot = rotCir;
     push();
     translate(localXpos,localYpos);
+    stroke(random(360), random(360), random(360)); //changes colors randomly 
     rotate(localRot);
-    rect(0,0,40);
+    //rect(0,0,40);
+    //circle(0,0,40);
+    ellipse(30,33,5*PI,3*10*PI);
+    circle(30,35,5*PI,3*10*PI);
+    ellipseMode(arc(20,40,60,70,80,90,70));
+    rectMode((line(8,8,10^2-80,10^2-8, 10^2-80)));
     pop();
-    //FIND RAINBOW ONE colorMode(HSB, 360, 100, 100);
     //P5.js libraries to make something cool like glitches, etc. plotSVG(SVG pen plotter library)
+  //this week add a new line to download plotSVG library and access functionality
 }
 
 function keyPressed() {
-    seed = floor(random(13001));
+    seed = floor(random(14002));
+    translate(width/6, height/6);
 }
 
 function draw() {
@@ -159,16 +172,150 @@ function draw() {
     background(220);
     noFill();
 
-    let step = 64; // space in grid
-    let inc = .01; // amt to incrment noise val
+    let step = 100; // space in grid
+    let inc = .09; // amt to incrment noise val
     let noiseVal = random();
     rectMode(CENTER);
     // increment noiseVal every time through the loop
     for (let x = step; x < width - step; x += step) {
         for (let y = step; y < height - step; y += step) {
             let rot = TWO_PI * noise(noiseVal);
-            drawRectangle(x,y,rot);
+            drawCircle(x,y,rot); 
             noiseVal += inc;
+
+        }
+    }
+    // noLoop();
+}
+
+*/
+//fill 8.5 by 11 paper start small then scale up!
+//draw a hatch patter to do overlays on top of shapes and such
+
+//to export SVG put between beginRecord and endRecord the segment of code then saves to your computer locally
+// press s will download and tell you the seed so you can enter it to see again
+//use incscape - open source illustrator interface to print stuff! I Draw2.0 Control Dialog boxes go early and often to test it
+//plotters room 325
+//pen plotter skirt or peice of clothing with fabric marker hmmm?!
+
+//MACRONS
+/*
+let seed = 1234;
+
+function setup() {
+    createCanvas(800, 600);
+     colorMode(HSB);
+}
+
+//allows you to section off changes in the code and makes code more legible
+function drawCircle(xCir, yCir, rotCir){ //passing values in function x, y, and rotation
+    // console.log(rot);
+    let localXpos = xCir;
+    let localYpos = yCir;
+    let localRot = rotCir;
+    push();
+    translate(localXpos,localYpos);
+    stroke(random(360), random(360), random(360)); //changes colors randomly 
+    rotate(localRot);
+    //rect(0,0,40);
+    //circle(0,0,40);
+    ellipse(30,33,5*PI,3*10*PI);
+    rect(40,35,5*PI,3*10*PI);
+    ellipse(50,35,5*PI,3*10*PI);
+   // rect(65,35,5*PI,3*10*PI);
+   // ellipse(80,35,5*PI,3*10*PI);
+   // rect(90,35,5*PI,3*10*PI);
+    ellipseMode(arc(20,40,60,70,80,90,70));
+    rectMode((line(8,8,10^2-80,10^2-8, 10^2-80)));
+    pop();
+    //P5.js libraries to make something cool like glitches, etc. plotSVG(SVG pen plotter library)
+  //this week add a new line to download plotSVG library and access functionality
+}
+
+function keyPressed() {
+    seed = floor(random(14002));
+    translate(width/6, height/6);
+}
+
+function draw() {
+    // seed fixes values each time through draw
+    noiseSeed(seed);
+    randomSeed(seed);
+    background(220);
+    noFill();
+
+    let step = 100; // space in grid
+    let inc = .09; // amt to incrment noise val
+    let noiseVal = random();
+    rectMode(CENTER);
+    // increment noiseVal every time through the loop
+    for (let x = step; x < width - step; x += step) {
+        for (let y = step; y < height - step; y += step) {
+            let rot = TWO_PI * noise(noiseVal);
+            drawCircle(x,y,rot); 
+            noiseVal += inc;
+
+        }
+    }
+    // noLoop();
+}
+*/
+
+let seed = 1234;
+
+function setup() {
+    createCanvas(800, 600);
+     colorMode(HSB);
+}
+
+//allows you to section off changes in the code and makes code more legible
+function drawCircle(xCir, yCir, rotCir){ //passing values in function x, y, and rotation
+    // console.log(rot);
+    let localXpos = xCir;
+    let localYpos = yCir;
+    let localRot = rotCir;
+    push();
+    translate(localXpos,localYpos);
+    stroke(random(360), random(360), random(360)); //changes colors randomly 
+    rotate(localRot);
+    //rect(0,0,40);
+    //circle(0,0,40);
+    ellipse(30,33,5*PI,3*10*PI);
+    rect(40,35,5*PI,3*10*PI);
+    ellipse(50,35,5*PI,3*10*PI);
+   // rect(65,35,5*PI,3*10*PI);
+   // ellipse(80,35,5*PI,3*10*PI);
+   // rect(90,35,5*PI,3*10*PI);
+   //ellipseMode(arc(20,40,60,70,80,90,70));
+   // rectMode((line(8,8,10^2-80,10^2-8, 10^2-80)));
+    pop();
+    //P5.js libraries to make something cool like glitches, etc. plotSVG(SVG pen plotter library)
+  //this week add a new line to download plotSVG library and access functionality
+}
+
+function keyPressed() {
+    seed = floor(random(14002));
+    translate(width/6, height/6);
+}
+
+function draw() {
+    // seed fixes values each time through draw
+    noiseSeed(seed);
+    randomSeed(seed);
+    background(220);
+    noFill();
+
+    let step = 100; // space in grid
+    let inc = .09; // amt to incrment noise val
+    let noiseVal = random();
+    rectMode(CENTER);
+    // increment noiseVal every time through the loop
+    for (let x = step; x < width - step; x += step) {
+        for (let y = step; y < height - step; y += step) {
+            let rot = TWO_PI * noise(noiseVal);
+            drawCircle(x,y,rot); 
+            noiseVal += inc;
+
         }
     }
     // noLoop();
