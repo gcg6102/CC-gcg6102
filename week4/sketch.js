@@ -261,10 +261,14 @@ function draw() {
 }
 */
 
-let seed = 1234;
+/*
+
+//let seed = 1679;
+
+let seed = 222;   
 
 function setup() {
-    createCanvas(800, 600);
+    createCanvas(200, 200);
      colorMode(HSB);
 }
 
@@ -280,9 +284,13 @@ function drawCircle(xCir, yCir, rotCir){ //passing values in function x, y, and 
     rotate(localRot);
     //rect(0,0,40);
     //circle(0,0,40);
-    ellipse(30,33,5*PI,3*10*PI);
-    rect(40,35,5*PI,3*10*PI);
-    ellipse(50,35,5*PI,3*10*PI);
+    
+
+   //had to adjust the design so that the macrons are in alignment again
+   //i asked several idm folks what they thought my code was and several guessed a burger or macroons which makes me happy
+    ellipse(46,33,3*PI,1*10*PI);
+    rect(40,33,3*PI,1*10*PI);
+    ellipse(34,33,3*PI,1*10*PI);
    // rect(65,35,5*PI,3*10*PI);
    // ellipse(80,35,5*PI,3*10*PI);
    // rect(90,35,5*PI,3*10*PI);
@@ -295,7 +303,7 @@ function drawCircle(xCir, yCir, rotCir){ //passing values in function x, y, and 
 
 function keyPressed() {
     seed = floor(random(14002));
-    translate(width/6, height/6);
+    translate(width/2, height/2);
 }
 
 function draw() {
@@ -305,8 +313,9 @@ function draw() {
     background(220);
     noFill();
 
-    let step = 100; // space in grid
-    let inc = .09; // amt to incrment noise val
+    //let step = 10; // space in grid make scribbles for a skirt
+    let step = 15;
+    let inc = .05; // amt to incrment noise val
     let noiseVal = random();
     rectMode(CENTER);
     // increment noiseVal every time through the loop
@@ -315,8 +324,78 @@ function draw() {
             let rot = TWO_PI * noise(noiseVal);
             drawCircle(x,y,rot); 
             noiseVal += inc;
-
         }
     }
-    // noLoop();
+    
+     noLoop();
+}
+*/
+
+
+
+//let seed = 1679;
+
+let seed = 222;   
+
+function setup() {
+    createCanvas(200, 200);
+     colorMode(HSB);
+}
+
+//allows you to section off changes in the code and makes code more legible
+function drawCircle(xCir, yCir, rotCir){ //passing values in function x, y, and rotation
+    // console.log(rot);
+    let localXpos = xCir;
+    let localYpos = yCir;
+    let localRot = rotCir;
+    push();
+    translate(localXpos,localYpos);
+    stroke(random(360), random(360), random(360)); //changes colors randomly 
+    rotate(localRot);
+    //rect(0,0,40);
+    //circle(0,0,40);
+    
+
+   //had to adjust the design so that the macrons are in alignment again
+   //i asked several idm folks what they thought my code was and several guessed a burger or macroons which makes me happy
+    ellipse(46,33,3*PI,1*10*PI);
+    rect(40,33,3*PI,1*10*PI);
+    ellipse(34,33,3*PI,1*10*PI);
+   // rect(65,35,5*PI,3*10*PI);
+   // ellipse(80,35,5*PI,3*10*PI);
+   // rect(90,35,5*PI,3*10*PI);
+   //ellipseMode(arc(20,40,60,70,80,90,70));
+   // rectMode((line(8,8,10^2-80,10^2-8, 10^2-80)));
+    pop();
+    //P5.js libraries to make something cool like glitches, etc. plotSVG(SVG pen plotter library)
+  //this week add a new line to download plotSVG library and access functionality
+}
+
+function keyPressed() {
+    seed = floor(random(14002));
+    translate(width/2, height/2);
+}
+
+function draw() {
+    // seed fixes values each time through draw
+    noiseSeed(seed);
+    randomSeed(seed);
+    background(220);
+    noFill();
+
+    //let step = 10; // space in grid make scribbles for a skirt
+    let step = 15;
+    let inc = .05; // amt to incrment noise val
+    let noiseVal = random();
+    rectMode(CENTER);
+    // increment noiseVal every time through the loop
+    for (let x = step; x < width - step; x += step) {
+        for (let y = step; y < height - step; y += step) {
+            let rot = TWO_PI * noise(noiseVal);
+            drawCircle(x,y,rot); 
+            noiseVal += inc;
+        }
+    }
+    
+     //noLoop();
 }
