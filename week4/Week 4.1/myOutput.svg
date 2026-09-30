@@ -1,0 +1,557 @@
+<!-- myOutput.svg -->
+<!-- Generated using p5.js v.2.3.1 and p5.plotSvg v.0.3.0: -->
+<!-- A Plotter-Oriented SVG Exporter for p5.js -->
+<!-- Tue Sep 29 2026 22:38:30 GMT-0400 (Eastern Daylight Time) -->
+<!-- DPI: 96 -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="6in" height="4in" viewBox="0 0 576 384">
+  <style>
+      circle, ellipse, line, path, polygon, polyline, rect, quad, text {
+        fill: none;
+        stroke: black;
+        stroke-width: 1;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+      }
+    </style>
+<g>
+  <g transform="translate(50, 50)">
+    <g transform="rotate(138.489207)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 100% 48.88%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(0% 100% 48.88%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 100% 48.88%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(50, 100)">
+    <g transform="rotate(149.180243)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 12.22% 0.46%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(0% 12.22% 0.46%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 12.22% 0.46%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(50, 150)">
+    <g transform="rotate(148.855585)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 15.6% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 15.6% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 15.6% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(50, 200)">
+    <g transform="rotate(150.683348)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 85.71% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(0% 85.71% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 85.71% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(50, 250)">
+    <g transform="rotate(161.355786)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(86.82% 100% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(86.82% 100% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(86.82% 100% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(50, 300)">
+    <g transform="rotate(166.713010)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(24.78% 0% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(24.78% 0% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(24.78% 0% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(100, 50)">
+    <g transform="rotate(167.671341)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 94% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(0% 94% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 94% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(100, 100)">
+    <g transform="rotate(173.019230)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(24.45% 26.9% 10.76%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(24.45% 26.9% 10.76%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(24.45% 26.9% 10.76%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(100, 150)">
+    <g transform="rotate(170.622418)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(87.7% 100% 88.75%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(87.7% 100% 88.75%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(87.7% 100% 88.75%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(100, 200)">
+    <g transform="rotate(172.362943)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(71.8% 100% 36.32%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(71.8% 100% 36.32%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(71.8% 100% 36.32%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(100, 250)">
+    <g transform="rotate(174.302580)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(18.57% 100% 80.12%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(18.57% 100% 80.12%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(18.57% 100% 80.12%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(100, 300)">
+    <g transform="rotate(177.777833)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(75.06% 100% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(75.06% 100% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(75.06% 100% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(150, 50)">
+    <g transform="rotate(187.496775)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 1.98% 33.02%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(0% 1.98% 33.02%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 1.98% 33.02%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(150, 100)">
+    <g transform="rotate(199.734879)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 0% 95.68%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 0% 95.68%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 0% 95.68%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(150, 150)">
+    <g transform="rotate(206.633976)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(44.15% 100% 57.76%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(44.15% 100% 57.76%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(44.15% 100% 57.76%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(150, 200)">
+    <g transform="rotate(208.260806)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(81.26% 100% 48.1%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(81.26% 100% 48.1%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(81.26% 100% 48.1%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(150, 250)">
+    <g transform="rotate(202.840833)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(14.67% 11.02% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(14.67% 11.02% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(14.67% 11.02% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(150, 300)">
+    <g transform="rotate(204.697942)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(9.93% 5.85% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(9.93% 5.85% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(9.93% 5.85% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(200, 50)">
+    <g transform="rotate(204.865968)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 0% 66.57%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 0% 66.57%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 0% 66.57%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(200, 100)">
+    <g transform="rotate(204.639056)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 0% 82.49%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 0% 82.49%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 0% 82.49%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(200, 150)">
+    <g transform="rotate(210.160604)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 81.8% 94.99%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 81.8% 94.99%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 81.8% 94.99%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(200, 200)">
+    <g transform="rotate(209.342640)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 81.17% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(0% 81.17% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 81.17% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(200, 250)">
+    <g transform="rotate(215.357104)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(4.88% 0% 18.33%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(4.88% 0% 18.33%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(4.88% 0% 18.33%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(200, 300)">
+    <g transform="rotate(216.595968)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(20.2% 67.91% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(20.2% 67.91% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(20.2% 67.91% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(250, 50)">
+    <g transform="rotate(214.864922)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 1.1% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 1.1% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 1.1% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(250, 100)">
+    <g transform="rotate(215.020366)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(78.31% 100% 46.85%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(78.31% 100% 46.85%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(78.31% 100% 46.85%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(250, 150)">
+    <g transform="rotate(216.564411)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(11.34% 10.3% 12.98%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(11.34% 10.3% 12.98%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(11.34% 10.3% 12.98%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(250, 200)">
+    <g transform="rotate(220.119498)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(81.38% 100% 82.45%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(81.38% 100% 82.45%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(81.38% 100% 82.45%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(250, 250)">
+    <g transform="rotate(225.779729)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(48.01% 49.43% 50.51%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(48.01% 49.43% 50.51%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(48.01% 49.43% 50.51%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(250, 300)">
+    <g transform="rotate(231.641814)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 0% 85.89%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 0% 85.89%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 0% 85.89%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(300, 50)">
+    <g transform="rotate(242.606002)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(4.02% 0% 82.14%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(4.02% 0% 82.14%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(4.02% 0% 82.14%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(300, 100)">
+    <g transform="rotate(253.742859)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 32.29% 97.13%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 32.29% 97.13%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 32.29% 97.13%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(300, 150)">
+    <g transform="rotate(249.601379)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 100% 32.98%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(0% 100% 32.98%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 100% 32.98%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(300, 200)">
+    <g transform="rotate(243.340937)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 47.86% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 47.86% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 47.86% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(300, 250)">
+    <g transform="rotate(234.012567)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(37.67% 8.94% 26.89%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(37.67% 8.94% 26.89%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(37.67% 8.94% 26.89%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(300, 300)">
+    <g transform="rotate(222.068672)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 18.24% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(0% 18.24% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 18.24% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(350, 50)">
+    <g transform="rotate(208.022057)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 68% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 68% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 68% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(350, 100)">
+    <g transform="rotate(194.491205)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 11.86% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 11.86% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 11.86% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(350, 150)">
+    <g transform="rotate(186.014937)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(99.72% 100% 95.63%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(99.72% 100% 95.63%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(99.72% 100% 95.63%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(350, 200)">
+    <g transform="rotate(185.850730)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(43.08% 0% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(43.08% 0% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(43.08% 0% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(350, 250)">
+    <g transform="rotate(181.797934)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(91.13% 0% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(91.13% 0% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(91.13% 0% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(350, 300)">
+    <g transform="rotate(167.552963)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(65.56% 100% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(65.56% 100% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(65.56% 100% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(400, 50)">
+    <g transform="rotate(156.160842)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 13.42% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(0% 13.42% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 13.42% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(400, 100)">
+    <g transform="rotate(166.710314)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 30% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(0% 30% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 30% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(400, 150)">
+    <g transform="rotate(169.884537)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(98.59% 100% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(98.59% 100% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(98.59% 100% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(400, 200)">
+    <g transform="rotate(154.665211)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(89.89% 100% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(89.89% 100% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(89.89% 100% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(400, 250)">
+    <g transform="rotate(144.002902)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 97.39% 68.81%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 97.39% 68.81%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 97.39% 68.81%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(400, 300)">
+    <g transform="rotate(140.936237)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(19% 100% 1.18%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(19% 100% 1.18%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(19% 100% 1.18%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(450, 50)">
+    <g transform="rotate(149.142392)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(1.48% 1.31% 1.77%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(1.48% 1.31% 1.77%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(1.48% 1.31% 1.77%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(450, 100)">
+    <g transform="rotate(158.867024)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 79.55% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(0% 79.55% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0% 79.55% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(450, 150)">
+    <g transform="rotate(153.106193)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(55.48% 0% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(55.48% 0% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(55.48% 0% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(450, 200)">
+    <g transform="rotate(146.513922)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0.45% 63.05% 11.6%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(0.45% 63.05% 11.6%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(0.45% 63.05% 11.6%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(450, 250)">
+    <g transform="rotate(139.523810)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 87.33% 47.87%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 87.33% 47.87%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 87.33% 47.87%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(450, 300)">
+    <g transform="rotate(140.559460)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(35.25% 100% 48.9%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(35.25% 100% 48.9%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(35.25% 100% 48.9%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(500, 50)">
+    <g transform="rotate(153.774746)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 85.29% 24.81%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 85.29% 24.81%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 85.29% 24.81%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(500, 100)">
+    <g transform="rotate(149.901406)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(66.35% 0% 100%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(66.35% 0% 100%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(66.35% 0% 100%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(500, 150)">
+    <g transform="rotate(138.904833)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 31.01% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 31.01% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 31.01% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(500, 200)">
+    <g transform="rotate(143.664692)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(1.98% 100% 0%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(1.98% 100% 0%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(1.98% 100% 0%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(500, 250)">
+    <g transform="rotate(149.534843)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 30.38% 17.06%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 30.38% 17.06%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 30.38% 17.06%);"/>
+    </g>
+  </g>
+</g>
+<g>
+  <g transform="translate(500, 300)">
+    <g transform="rotate(157.878897)">
+      <ellipse cx="46" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 79.45% 72.88%);"/>
+      <rect x="35.2876" y="17.2920" width="9.4248" height="31.4159" style="stroke:rgb(100% 79.45% 72.88%);"/>
+      <ellipse cx="34" cy="33" rx="4.7124" ry="15.7080" style="stroke:rgb(100% 79.45% 72.88%);"/>
+    </g>
+  </g>
+</g>
+</svg>

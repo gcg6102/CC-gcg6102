@@ -401,7 +401,7 @@ function draw() {
 
 
     //let step = 10; // space in grid make scribbles for a skirt
-    let step = 10;
+    let step = 50;
     let inc = .07; // amt to incrment noise val
     let noiseVal = random();
     rectMode(CENTER);
