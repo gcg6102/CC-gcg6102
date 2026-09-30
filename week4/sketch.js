@@ -335,12 +335,21 @@ function draw() {
 
 //let seed = 1679;
 
-let seed = 222;   
+let seed = 222;  
+
+p5.disableFriendlyErrors = true; // keep warnings quiet
+let bDoExportSvg = false; 
+
 
 function setup() {
-    createCanvas(200, 200);
-     colorMode(HSB);
+    createCanvas(576, 384);
+     colorMode(HSB); //noise
+
 }
+
+let x0 = 200;s
+let y0 = 150;
+
 
 //allows you to section off changes in the code and makes code more legible
 function drawCircle(xCir, yCir, rotCir){ //passing values in function x, y, and rotation
@@ -351,17 +360,23 @@ function drawCircle(xCir, yCir, rotCir){ //passing values in function x, y, and 
     push();
     translate(localXpos,localYpos);
     stroke(random(360), random(360), random(360)); //changes colors randomly 
-    rotate(localRot);
+    rotate(localRot); //i added noises for more randomness to make the shapes overlap
+    //rotate(localRot);
     //rect(0,0,40);
     //circle(0,0,40);
     
-
+    //i tired to do outlined hearts but it just looked like two circles and a traiaggnle because I can't use the fill
+  /* HEARTS
+    ellipse(x0 - 35.5, y0 - 24, 100, 100);
+    ellipse(x0 + 35.5, y0 - 24, 100, 100);
+    triangle(x0 - 80, y0, x0 + 80, y0, x0, y0 + 96);
+    */
    //had to adjust the design so that the macrons are in alignment again
    //i asked several idm folks what they thought my code was and several guessed a burger or macroons which makes me happy
     ellipse(46,33,3*PI,1*10*PI);
     rect(40,33,3*PI,1*10*PI);
     ellipse(34,33,3*PI,1*10*PI);
-   // rect(65,35,5*PI,3*10*PI);
+    //rect(65,35,5*PI,3*10*PI);
    // ellipse(80,35,5*PI,3*10*PI);
    // rect(90,35,5*PI,3*10*PI);
    //ellipseMode(arc(20,40,60,70,80,90,70));
@@ -371,10 +386,7 @@ function drawCircle(xCir, yCir, rotCir){ //passing values in function x, y, and 
   //this week add a new line to download plotSVG library and access functionality
 }
 
-function keyPressed() {
-    seed = floor(random(14002));
-    translate(width/2, height/2);
-}
+
 
 function draw() {
     // seed fixes values each time through draw
@@ -383,19 +395,48 @@ function draw() {
     background(220);
     noFill();
 
+     if (bDoExportSvg){
+    beginRecordSvg("myOutput.svg");
+  }
+
+
     //let step = 10; // space in grid make scribbles for a skirt
-    let step = 15;
-    let inc = .05; // amt to incrment noise val
+    let step = 10;
+    let inc = .07; // amt to incrment noise val
     let noiseVal = random();
     rectMode(CENTER);
+
+   
+
     // increment noiseVal every time through the loop
     for (let x = step; x < width - step; x += step) {
         for (let y = step; y < height - step; y += step) {
             let rot = TWO_PI * noise(noiseVal);
             drawCircle(x,y,rot); 
             noiseVal += inc;
-        }
-    }
-    
+
+  
+
+  // Draw stuff here, such as:
+  //line(0,0, mouseX, mouseY); 
+
+     //background(245)
+
      //noLoop();
+
 }
+ 
+}
+if (bDoExportSvg){
+    endRecordSvg();
+    bDoExportSvg = false;
+  }
+}
+
+
+function keyPressed(){
+  if (key == 's'){ 
+    bDoExportSvg = true; 
+  }
+}
+

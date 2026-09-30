@@ -58,4 +58,4 @@ this is a new line.
 
 To start a new paragraph, leave an empty line between two lines of text.
 
-This is a new paragraph.
+In my original drawing, I started with making hearts that explode, or trying to make vector lines. I initally took parts of the code in class from the squares that rotate. I wanted to do this with heart.
