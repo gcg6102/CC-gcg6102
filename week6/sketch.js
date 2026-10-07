@@ -40,4 +40,38 @@ function draw(){
     ellipse(x,height/2, 50,50);
 }
 
+//creating a slider for red, blue, green, and alpha to change the color of the ellipse
+/* the code vscode gave me//
+
+let rSlider, gSlider, bSlider, aSlider;
+
+function setup(){
+    createCanvas(400,400);
+    rSlider = createSlider(0, 255, 100);
+    gSlider = createSlider(0, 255, 100);
+    bSlider = createSlider(0, 255, 100);
+    aSlider = createSlider(0, 255, 100);
+
+    rSlider.position(10,20);
+    gSlider.position(10,50);
+    bSlider.position(10,80);
+    aSlider.position(10,110);
+}
+
+function draw(){
+    background(220);
+    let r = rSlider.value();
+    let g = gSlider.value();
+    let b = bSlider.value();
+    let a = aSlider.value();
+
+    fill(r,g,b,a);
+    ellipse(width/2,height/2, 50,50);
+}
+accessibility screen readers
+can make distinct units of your sketch vs. on a web page
+using html and css like a remote control for your sketch 
+edit things according to viewport
+*/
+
 
