@@ -335,7 +335,11 @@ function draw() {
 
 //let seed = 1679;
 
-let seed = 222;  
+let seed = 222;  //i like this seed
+
+//let seed = 536;
+
+
 
 p5.disableFriendlyErrors = true; // keep warnings quiet
 let bDoExportSvg = false; 
@@ -347,7 +351,7 @@ function setup() {
 
 }
 
-let x0 = 200;s
+let x0 = 200;
 let y0 = 150;
 
 
@@ -360,7 +364,7 @@ function drawCircle(xCir, yCir, rotCir){ //passing values in function x, y, and 
     push();
     translate(localXpos,localYpos);
     stroke(random(360), random(360), random(360)); //changes colors randomly 
-    rotate(localRot); //i added noises for more randomness to make the shapes overlap
+    rotate(localRot*35); //i added noises for more randomness to make the shapes overlap
     //rotate(localRot);
     //rect(0,0,40);
     //circle(0,0,40);
@@ -401,8 +405,8 @@ function draw() {
 
 
     //let step = 10; // space in grid make scribbles for a skirt
-    let step = 50;
-    let inc = .07; // amt to incrment noise val
+    let step = 60;
+    let inc = .1; // amt to incrment noise val
     let noiseVal = random();
     rectMode(CENTER);
 

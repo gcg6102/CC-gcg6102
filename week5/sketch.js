@@ -23,3 +23,6 @@ function draw() {
     ps = 5;// prints at a slower pace per frame
 }
 //time on my computer will show
+
+
+
