@@ -148,7 +148,7 @@ let oneBall = {
 
     //i want to make ghostly angels that develop wings depending on the angel number 
     //each section creates a wing to make a distored biblically computationally unique angel
-
+/*
 //Algorithm for angel clock
     //what angel numbers did you see today
     //1)enter where, enter what the number was
@@ -163,3 +163,69 @@ let oneBall = {
     //10 if you click on the angel: it will display stored data about its origns and where you were
     //maybe something in the algorithm also takes the strings of the angel number location or time to contrubute to how it looks
     //talk to Bo if needed on FRIDAYYYY
+*/
+let nameInput; //name enter field assign as global variable
+let angelNumberInput; //angel number assign as global variable
+//I want to make text shaped like angel wings along
+let radiusOfShape = 200;
+
+
+// STEP ONE: take in input from the user
+
+function preload(){
+    MarshaEdit = loadImage("Media/MarshaScreenshot.jpg")
+}
+
+
+function setup(){
+    createCanvas(windowWidth,windowHeight);
+    //text("Hello my symbolic friend! Please enter the angel number you saw today", 20, 50); //creates a text box at the top of the canvas in light blue color
+
+   // imageMode(CENTER); //centering my image
+
+    nameInput = createInput(); //creates an input box for the user to enter their name
+    nameInput.attribute('placeholder', 'Enter your name here'); //adds a placeholder to the input box
+    nameInput.position(100, 100); //positions the input box on the canvas
+    nameInput.size(100); //sets the size of the input box
+
+    locationInput = createInput(); //creates an input box for the user to enter their location
+    locationInput.attribute('placeholder', 'Enter your location here'); //adds a placeholder to the input box
+    locationInput.position(100, 150); //positions the input box on the canvas
+    locationInput.size(100); //sets the size of the input box
+
+    angelNumberInput = createInput(); //creates an input box for the user to enter their angel number
+    angelNumberInput.attribute('placeholder', 'Enter angel number here'); //adds a placeholder to the input box
+    angelNumberInput.position(100, 200); //positions the input box on the canvas
+    angelNumberInput.size(100); //sets the size of the input box
+
+}
+
+function draw(){
+    background(300);
+
+    fill("lightblue");
+    text("Hello my symbolic friend! Please enter the angel number you saw today <3 " , 20, 50); //creates a text box at the top of the canvas in light blue color
+    let name = nameInput.value(); //gets the value of the name input box
+    let location = locationInput.value(); //gets the value of the location input box
+    let angelNumber = angelNumberInput.value(); //gets the value of the angel number input box
+
+    text("Name: " + name, 20, 300); //displays the name entered by the user
+    text("Location: " + location, 20, 350); //displays the location entered by the user
+    text("Angel Number: " + angelNumber, 20, 400); //displays the angel number entered by the user  
+
+    fill("lightblue");
+    circle(width/2, height/2, radiusOfShape*2, radiusOfShape*2); //draws a circle in the center of the canvas with the specified radius
+    //image(MarshaEdit, width / 2, height / 2, radiusOfShape * 1.5, radiusOfShape * 1.5);
+   //image works, but isn't showing up, just covering the next circle,
+    //circleMode(CENTER);
+    circle(width/2, height/2, radiusOfShape/20, radiusOfShape/20);
+    fill("green");
+
+
+}
+
+
+ 
+
+
+
