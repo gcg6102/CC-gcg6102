@@ -185,36 +185,59 @@ function setup(){
 
     nameInput = createInput(); //creates an input box for the user to enter their name
     nameInput.attribute('placeholder', 'Enter your name here'); //adds a placeholder to the input box
-    nameInput.position(100, 100); //positions the input box on the canvas in an offcentered way
+    nameInput.position(100, 120); //positions the input box on the canvas in an offcentered way
     nameInput.size(100); //sets the size of the input box
 
     locationInput = createInput(); //creates an input box for the user to enter their location
     locationInput.attribute('placeholder', 'Enter your location here'); //adds a placeholder to the input box in an offcentered way
-    locationInput.position(100, 150); //positions the input box on the canvas
+    locationInput.position(100, 170); //positions the input box on the canvas
     locationInput.size(100); //sets the size of the input box
 
     angelNumberInput = createInput(); //creates an input box for the user to enter their angel number
     angelNumberInput.attribute('placeholder', 'Enter angel number here'); //adds a placeholder to the input box in an offcentered way
-    angelNumberInput.position(100, 200); //positions the input box on the canvas
+    angelNumberInput.position(100, 220); //positions the input box on the canvas
     angelNumberInput.size(100); //sets the size of the input box
 
 }
 
 function draw(){
     background(300);
-    fill("lightblue");
-    text("Hello my symbolic friend! Please enter the angel number you saw today <3 " , 20, 50); //creates a text box at the top of the canvas in light blue color
+    //fill("lightblue");
+    stroke("lightblue"); //makes the stroke light blue 
+    strokeWeight(1); //establioshes stroke thickness
+    text("Hello my symbolic friend!" , 20, 50); //creates a text box at the top of the canvas in light blue color
+    text("Please enter the angel number you saw today <3 " , 20, 100)
     let name = nameInput.value(); //gets the value of the name input box
     let location = locationInput.value(); //gets the value of the location input box
     let angelNumber = angelNumberInput.value(); //gets the value of the angel number input box
 
 
-    let s = second();
-    let m = minute();
-    let h = hour();
+    function drawDigitalClock(){ //function to organize the digital clock section
+        let s = second();
+        let m = minute();
+        let h = hour();
 
-   // noStroke();
-    text(h + ":" + m + ":" + s, width/2, height/2); //centering the clock text that has a live clock to be at the top of the abstract clock
+        // noStroke();
+        text(h + ":" + m + ":" + s, 20, 450); //centering the clock text that has a live clock to be at the top of the abstract clock
+        textSize(30);
+    }
+
+    function drawClock(){
+
+        let s = second();
+        let m = minute();
+        let h = hour();
+
+        //strokeWeight(4);
+        noFill()
+        circle(width/2,height/2,300,300);
+
+        //stroke("lightblue", 100, 250);
+        arc(width/2,height/2,300,300,0,360);
+
+    }
+        
+
     text("Name: " + name, 20, 300); //displays the name entered by the user
     text("Location: " + location, 20, 350); //displays the location entered by the user
     text("Angel Number: " + angelNumber, 20, 400); //displays the angel number entered by the user  
@@ -230,6 +253,8 @@ function draw(){
     //i want the input to store and calcluate behind the scenes to form the components of the abstract clock
     //i want each orignal angel to populate the inside of the abstract clock as it relates to the time the data is entered, the name, the location, and the angel number
 
+    drawDigitalClock();
+    drawClock();
 }
 
 
