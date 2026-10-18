@@ -164,25 +164,27 @@ let oneBall = {
     //maybe something in the algorithm also takes the strings of the angel number location or time to contrubute to how it looks
     //talk to Bo if needed on FRIDAYYYY
 */
+
 let nameInput; //name enter field assign as global variable
+let locationInput;
 let angelNumberInput; //angel number assign as global variable
 //I want to make text shaped like angel wings along
 let radiusOfShape = 200;
+let MarshaEdit;
 
 
 // STEP ONE: take in input from the user
 
-function preload(){
-    MarshaEdit = loadImage("Media/MarshaScreenshot.jpg")
+//with p5js 2.0 there is a particular syntax with async and await
+async function setup() { 
+    MarshaEdit = await loadImage("Media/MarshaScreenshot.jpg");
 }
-
 
 function setup(){
     createCanvas(windowWidth,windowHeight);
-    //text("Hello my symbolic friend! Please enter the angel number you saw today", 20, 50); //creates a text box at the top of the canvas in light blue color
-
-   // imageMode(CENTER); //centering my image
-
+    text("Hello my symbolic friend! Please enter the angel number you saw today", 20, 50); //creates a text box at the top of the canvas in light blue color
+    
+    
     nameInput = createInput(); //creates an input box for the user to enter their name
     nameInput.attribute('placeholder', 'Enter your name here'); //adds a placeholder to the input box
     nameInput.position(100, 100); //positions the input box on the canvas
@@ -198,6 +200,7 @@ function setup(){
     angelNumberInput.position(100, 200); //positions the input box on the canvas
     angelNumberInput.size(100); //sets the size of the input box
 
+    
 }
 
 function draw(){
@@ -214,18 +217,33 @@ function draw(){
     text("Angel Number: " + angelNumber, 20, 400); //displays the angel number entered by the user  
 
     fill("lightblue");
-    circle(width/2, height/2, radiusOfShape*2, radiusOfShape*2); //draws a circle in the center of the canvas with the specified radius
+    //circle(width/2, height/2, radiusOfShape*2, radiusOfShape*2); //draws a circle in the center of the canvas with the specified radius
+    image(MarshaEdit, width / 2, height / 2, 500,300);
     //image(MarshaEdit, width / 2, height / 2, radiusOfShape * 1.5, radiusOfShape * 1.5);
    //image works, but isn't showing up, just covering the next circle,
     //circleMode(CENTER);
-    circle(width/2, height/2, radiusOfShape/20, radiusOfShape/20);
-    fill("green");
+
+    //circle(width/2, height/2, radiusOfShape/20, radiusOfShape/20);
+    
 
 
 }
 
 
- 
 
+//testing out await loadImage
+/*
+let MarshaEdit; 
+// Single async setup function in p5.js v2 
+async function setup() { 
+    createCanvas(windowWidth, windowHeight); 
+    MarshaEdit = await loadImage("Media/MarshaScreenshot.jpg");
+    imageMode(CENTER);
+}
 
+function draw(){
+    background(220);
+    image(MarshaEdit, width / 2, height / 2, 500,300);
+}
+*/
 
