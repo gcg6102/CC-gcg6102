@@ -172,67 +172,85 @@ let angelNumberInput; //angel number assign as global variable
 let radiusOfShape = 200;
 let MarshaEdit;
 
-
 // STEP ONE: take in input from the user
-
+/*
 //with p5js 2.0 there is a particular syntax with async and await
-async function setup() { 
-    MarshaEdit = await loadImage("Media/MarshaScreenshot.jpg");
+function preload() {
+    MarshaEdit = loadImage("Media/MarshaScreenshot.jpg");
 }
+*/
 
 function setup(){
     createCanvas(windowWidth,windowHeight);
-    text("Hello my symbolic friend! Please enter the angel number you saw today", 20, 50); //creates a text box at the top of the canvas in light blue color
-    
-    
+
     nameInput = createInput(); //creates an input box for the user to enter their name
     nameInput.attribute('placeholder', 'Enter your name here'); //adds a placeholder to the input box
-    nameInput.position(100, 100); //positions the input box on the canvas
+    nameInput.position(100, 100); //positions the input box on the canvas in an offcentered way
     nameInput.size(100); //sets the size of the input box
 
     locationInput = createInput(); //creates an input box for the user to enter their location
-    locationInput.attribute('placeholder', 'Enter your location here'); //adds a placeholder to the input box
+    locationInput.attribute('placeholder', 'Enter your location here'); //adds a placeholder to the input box in an offcentered way
     locationInput.position(100, 150); //positions the input box on the canvas
     locationInput.size(100); //sets the size of the input box
 
     angelNumberInput = createInput(); //creates an input box for the user to enter their angel number
-    angelNumberInput.attribute('placeholder', 'Enter angel number here'); //adds a placeholder to the input box
+    angelNumberInput.attribute('placeholder', 'Enter angel number here'); //adds a placeholder to the input box in an offcentered way
     angelNumberInput.position(100, 200); //positions the input box on the canvas
     angelNumberInput.size(100); //sets the size of the input box
 
-    
 }
 
 function draw(){
     background(300);
-
     fill("lightblue");
     text("Hello my symbolic friend! Please enter the angel number you saw today <3 " , 20, 50); //creates a text box at the top of the canvas in light blue color
     let name = nameInput.value(); //gets the value of the name input box
     let location = locationInput.value(); //gets the value of the location input box
     let angelNumber = angelNumberInput.value(); //gets the value of the angel number input box
 
+
+    let s = second();
+    let m = minute();
+    let h = hour();
+
+   // noStroke();
+    text(h + ":" + m + ":" + s, width/2, height/2); //centering the clock text that has a live clock to be at the top of the abstract clock
     text("Name: " + name, 20, 300); //displays the name entered by the user
     text("Location: " + location, 20, 350); //displays the location entered by the user
     text("Angel Number: " + angelNumber, 20, 400); //displays the angel number entered by the user  
 
-    fill("lightblue");
-    //circle(width/2, height/2, radiusOfShape*2, radiusOfShape*2); //draws a circle in the center of the canvas with the specified radius
-    image(MarshaEdit, width / 2, height / 2, 500,300);
+
+   // fill("lightblue");
+   // circle(width/2, height/2, radiusOfShape*2, radiusOfShape*2); //draws a circle in the center of the canvas with the specified radius
+    //image(MarshaEdit, 500,300);
     //image(MarshaEdit, width / 2, height / 2, radiusOfShape * 1.5, radiusOfShape * 1.5);
    //image works, but isn't showing up, just covering the next circle,
     //circleMode(CENTER);
 
-    //circle(width/2, height/2, radiusOfShape/20, radiusOfShape/20);
-    
-
+    //i want the input to store and calcluate behind the scenes to form the components of the abstract clock
+    //i want each orignal angel to populate the inside of the abstract clock as it relates to the time the data is entered, the name, the location, and the angel number
 
 }
 
 
 
+
+
+
+
 //testing out await loadImage
 /*
+
+
+    let s = second();
+    let m = minute();
+    let h = hour();
+
+    fill("lightblue");
+    noStroke();
+    text(h + ":" + m + ":" + s, 10, 200);
+
+
 let MarshaEdit; 
 // Single async setup function in p5.js v2 
 async function setup() { 
