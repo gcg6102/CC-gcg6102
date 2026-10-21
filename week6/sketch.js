@@ -33,14 +33,14 @@ let angelNumberLen;
 
 //create arguments set all to noise map
 
-async function setup(){
-  img = await loadImage('/assets/MarshaScreenshot.jpg');
+//async function setup(){ this doesn't work in my vscode but is working on p5.js
+    //img = await loadImage('/assets/MarshaScreenshot.jpg');
 
+function setup(){
 
-  
     createCanvas(windowWidth,windowHeight);
 
-        image(img, 40, 100); //adjust positioning of the image
+    //image(img, 40, 100); //adjust positioning of the image
         //img.resize(10,10);
     angleMode(DEGREES); //changes it for marks based on a 360 increments ssphere (a clock)
     noiseSeed(seed); //add noise var
@@ -61,11 +61,11 @@ async function setup(){
     angelNumberInput.position(100, 220); //positions the input box on the canvas
     angelNumberInput.size(100); //sets the size of the input box
 
-  submitAngel = createButton('Show me my Angel', 20, 300); //use your p5.js clicks button to calculate one's angel
-  submitAngel.position(20, 250); // position of submit button places on top of the name but under the input text boxes
-
+ // submitAngel = createButton('Show me my Angel', 20, 300); //use your p5.js clicks button to calculate one's angel
+  //submitAngel.position(20, 250); // position of submit button places on top of the name but under the input text boxes
 
 }
+
 
 function draw(){
    // background(300);
@@ -85,8 +85,14 @@ function draw(){
     let m = minute();
     let h = hour();
 
-    text("Length:" + nameVal);
+   // text("Length:" + nameVal);
 
+      //gets length of each input for angel numbers and finds the length
+    let nameLen = nameInput.value().length;
+    let locationLen = locationInput.value().length;
+    let angelNumberLen = angelNumberInput.value().length;
+
+    uniqueAngel = nameLen + locationLen + angelNumberLen;
 
 
     function drawNoise(){
@@ -95,13 +101,13 @@ function draw(){
     let m = minute();
     let h = hour();
 
-    x1 = noise(map(offset+5) * width);
-    y1 = noise(offset+10) * height;
-    x2 = noise(offset+15) * width;
-    y2 = noise(offset+20) * height;
-    x3 = noise(offset+25) * width;
-    y3 = noise(offset*30) * height;
-    x4 = noise(offset*35) * width;
+    x1 = noise(map(offset*uniqueAngel*s) * width);
+    y1 = noise(offset*uniqueAngel*m)* height;
+    x2 = noise(offset*uniqueAngel*h) * width;
+    y2 = noise(offset+uniqueAngel*h) * height;
+    x3 = noise(offset+uniqueAngel*h) * width;
+    y3 = noise(offset*uniqueAngel*m) * height;
+    x4 = noise(offset*uniqueAngel*m) * width;
     y4 = noise(offset*40) * height;
     offset = offset + 0.001; //increment offset
    // noFill();
@@ -170,16 +176,24 @@ function draw(){
          //triangle(width*2,height*2,-400,-400,0,70);
     }
 
-      //gets length of each input for angel numbers and finds the length
-    let nameLen = nameInput.value().length;
-    let locationLen = locationInput.value().length;
-    let angelNumberLen = angelNumberInput.value().length;
-
-    uniqueAngel = nameLen + locationLen + angelNumberLen;
-        
     text("Name: " + name, 20, 300); //displays the name entered by the user
     text("Location: " + location, 20, 350); //displays the location entered by the user
     text("Angel Number: " + angelNumber, 20, 400); //displays the angel number entered by the user  
+
+    drawDigitalClock();
+    drawNoise();
+    drawArcClock();
+  
+} 
+
+
+
+
+
+
+
+
+
 
      //let namesString = nameInput.length;
    // let locationString = locationInput.length;
@@ -188,10 +202,10 @@ function draw(){
 
 
 
-    drawDigitalClock();
-    drawArcClock();
-    drawNoise(); //the noise function is stopping my clock from working sigh
-    
+   // drawDigitalClock();
+    //drawArcClock();
+    //drawNoise(); //the noise function is stopping my clock from working sigh
+
 
    // length1 = nameInput.length();
     //length2 = locationInput.length();
@@ -201,7 +215,6 @@ function draw(){
     //the length of the inputs plus the calculation of the time to create an angel
 
 
-}
 
         //does a live calculator of the angel number you got (make it even easier)
         //angels i've seen since making this code
@@ -274,8 +287,8 @@ function draw(){
 
 
 //testing out await loadImage
-/*
 
+/*
 
     let s = second();
     let m = minute();
@@ -305,10 +318,8 @@ function draw(){
     noiseSeed(seed);
     background(220);
 }
-
-   
-
 */
+   
 
 //sources: https://m.youtube.com/watch?v=E4RyStef-gY&pp=ugUEEgJlbg%3D%3D&ra=m
 //https://m.youtube.com/watch?v=uctX1P3H3xM&list=PL0beHPVMklwh6-2ohRiaN6wo8ttoWF9JP&index=2&pp=iAQB&ra=m

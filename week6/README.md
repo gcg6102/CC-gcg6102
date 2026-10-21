@@ -59,3 +59,11 @@ this is a new line.
 To start a new paragraph, leave an empty line between two lines of text.
 
 This is a new paragraph.
+
+When making my clock, I wanted to be symbolic about perlin noise. I decided to make an angel number clock. I made a function for each section/layer of the code for my angel number clock. I went to Bo for debugging and another set of eyes. I used perlin noise in reference to user data to alter its shape to look "computationally angelic," but I realize that there are so many more ways I can have this data be altered. With more time to experiment, I could customize it even more, but I like the general idea and ability for the shape to change with input.
+
+
+
+
+//Stylings CSS porfolio
+//Fix the 
