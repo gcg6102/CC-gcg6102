@@ -17,7 +17,7 @@ let noiseVal;
 let seed;
 let n;
 let offset = 1; //noise shifted
-let x1; 
+let x1; //belzier coordinates
 let y1;
 let x2;
 let y2;
@@ -25,6 +25,11 @@ let x3;
 let y3;
 let x4; 
 let y4;
+
+//length of each input
+let nameLen;
+let locationLen;
+let angelNumberLen;
 
 //create arguments set all to noise map
 
@@ -35,7 +40,8 @@ async function setup(){
   
     createCanvas(windowWidth,windowHeight);
 
-        image(img, 0, 0);
+        image(img, 40, 100); //adjust positioning of the image
+        //img.resize(10,10);
     angleMode(DEGREES); //changes it for marks based on a 360 increments ssphere (a clock)
     noiseSeed(seed); //add noise var
 
@@ -43,6 +49,7 @@ async function setup(){
     nameInput.attribute('placeholder', 'Enter your name here'); //adds a placeholder to the input box
     nameInput.position(100, 120); //positions the input box on the canvas in an offcentered way
     nameInput.size(100); //sets the size of the input box
+
 
     locationInput = createInput(); //creates an input box for the user to enter their location
     locationInput.attribute('placeholder', 'Enter your location here'); //adds a placeholder to the input box in an offcentered way
@@ -53,6 +60,9 @@ async function setup(){
     angelNumberInput.attribute('placeholder', 'Enter angel number here'); //adds a placeholder to the input box in an offcentered way
     angelNumberInput.position(100, 220); //positions the input box on the canvas
     angelNumberInput.size(100); //sets the size of the input box
+
+  submitAngel = createButton('Show me my Angel', 20, 300); //use your p5.js clicks button to calculate one's angel
+  submitAngel.position(20, 250); // position of submit button places on top of the name but under the input text boxes
 
 
 }
@@ -70,10 +80,14 @@ function draw(){
     let name = nameInput.value(); //gets the value of the name input box
     let location = locationInput.value(); //gets the value of the location input box
     let angelNumber = angelNumberInput.value(); //gets the value of the angel number input box
-
+  
     let s = second();
     let m = minute();
     let h = hour();
+
+    text("Length:" + nameVal);
+
+
 
     function drawNoise(){
 
@@ -86,19 +100,21 @@ function draw(){
     x2 = noise(offset+15) * width;
     y2 = noise(offset+20) * height;
     x3 = noise(offset+25) * width;
-    y3 = noise(offset+30) * height;
-    x4 = noise(offset+35) * width;
-    x4 = noise(offset+40) * height;
-    offset = offset + 0.1; //increment offset
-
-    bezier(width/2, y1, x2, y2, x3, y3, x4,8);
+    y3 = noise(offset*30) * height;
+    x4 = noise(offset*35) * width;
+    y4 = noise(offset*40) * height;
+    offset = offset + 0.001; //increment offset
+   // noFill();
+    //strokeWeight();
+    fill("white");
+    stroke("black");
+    bezier(width/2, height/2, x2, y2, x3, y3, x4,y4);
     //bezier(x1i, x2*i, x3*i, x4*i, y1*i, y2*i, y3*i, y4*i);
 
     //noise is values 0 to 1, so need another value to increase the noise
     }
 
 
-    
 
     function drawDigitalClock(){ //function to organize the digital clock section
         
@@ -113,7 +129,7 @@ function draw(){
 
     function drawArcClock(){
 
-        strokeWeight(8);
+        //strokeWeight(8);
         stroke("lightblue");
         noFill();
         //seconds clock
@@ -146,21 +162,34 @@ function draw(){
 
         //hours clock
         stroke("purple");
+        //noFill("purple");
         let end3 = map(h, 0, 24, 0, 360);
         //for(i = 0; i < 10; i++){
         arc(width/2,height/2, 160, 160,0,end3); 
         //triangle(width/2,height/2,300,300,0,end3);
          //triangle(width*2,height*2,-400,-400,0,70);
     }
+
+      //gets length of each input for angel numbers and finds the length
+    let nameLen = nameInput.value().length;
+    let locationLen = locationInput.value().length;
+    let angelNumberLen = angelNumberInput.value().length;
+
+    uniqueAngel = nameLen + locationLen + angelNumberLen;
         
     text("Name: " + name, 20, 300); //displays the name entered by the user
     text("Location: " + location, 20, 350); //displays the location entered by the user
     text("Angel Number: " + angelNumber, 20, 400); //displays the angel number entered by the user  
 
+     //let namesString = nameInput.length;
+   // let locationString = locationInput.length;
+    //let angelString = angelNumberInput.length;
+
+
 
 
     drawDigitalClock();
-   // drawArcClock();
+    drawArcClock();
     drawNoise(); //the noise function is stopping my clock from working sigh
     
 
@@ -276,6 +305,9 @@ function draw(){
     noiseSeed(seed);
     background(220);
 }
+
+   
+
 */
 
 //sources: https://m.youtube.com/watch?v=E4RyStef-gY&pp=ugUEEgJlbg%3D%3D&ra=m
