@@ -53,10 +53,12 @@ function keyPressed(){
         pMapper.load("maps/map.json");
     }
 }
-    */
+*/
 let pMapper; // mapper instance
 let myQuad; // one face
 let ballx;
+let noise;
+let x1;
 
 function setup() {
     // p5.mapper needs WEBGL in createCanvas
@@ -84,19 +86,26 @@ function myDrawing(mySketch) {
     mySketch.strokeWeight(4);
     mySketch.line(0, 0, 400, 400); // diagonal line across the quad
     mySketch.noStroke();
-    mySketch.fill(255);
+    mySketch.fill(noise(map(offset)(255)));
     mySketch.ellipse(ballx, myQuad.height/2, 150);
+     x1 = noise(map(offset*uniqueAngel*s) * width);
     ballx += 1;
     if(ballx>myQuad.width+75)ballx=-75;
 }
-function keyPressed() {
-    if (key === "c") {
-        pMapper.toggleCalibration();
-    }
-    if (key === "s") {
-        pMapper.save("map.json");
-    }
-    if (key === "l") {
+function keyPressed(){
+switch(key) {
+    case "c":
+        pMapper.toggleCalbiration();
+        break;
+    case "f":
+        let fs = fullscreen();
+        fullscreen(!fs);
+        break;
+    case "s":
         pMapper.load("maps/map.json");
-    }
+        break;
+    case "s":
+        pMapper.save("map.json");
+        break;
+}
 }
