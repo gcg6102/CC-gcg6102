@@ -43,7 +43,7 @@ function myDrawing(mySketch){
 //key functionality to edit and save and return to state
 function keyPressed(){
     if (key == "c"){
-        pMapper.toggleCalibration();
+        pMapper.toggleCalibration(); //calibrate in full screenmode to ensure dimenstions
     }
     if (key === "s"){
         pMapper.save("map.json");
