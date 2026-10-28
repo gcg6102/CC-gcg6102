@@ -111,13 +111,126 @@ switch(key) {
 }
 }
 */
+/*
+Objects
+let sphere;
+
+//we are doing classes
+//becomes availble for anything else you build
+
+class Ball{
+    constrcutor(){
+        this.diam = random(20,100);
+        this.col = color(random(30,150));
+    }
+    update(){
+        this.xpos += this.xspeed;
+        this.ypos += this.yspeed;
+    }
+
+    //breaks up steps for each part of the ball
+    //creates a sort of animation
+    //checks several things
+    //update, checking the wall, draw on screen
+
+}
+*/
+
+//Projection Mapping
+/*
+function setup(){
+    createCanvas(windowWidth,windowHeight, WEBGL);
+    pMapper = createProjectionMapper(this); //creates canvas
+}
+
+function draw(){
+    background(0);
+    myQuad.displaySketch(myDrawing); //calling the drawing drawing onto my sketch vs your sketch draws on one space
+    //leftQuad.displaySketch(dots);
+  // rightQuad.displaySketch(stripes);
+}
+//drawing stuff within the context
+function myDrawing(mySketch){
+    mySketch.background("blue");
+
+}
+//key functionality to edit and save and return to state
+function keyPressed(){
+    if (key == "c"){
+        pMapper.toggleCalibration(); //calibrate in full screenmode to ensure dimenstions
+    }
+    if (key === "s"){
+        pMapper.save("map.json");
+    }
+    if(key ==="l"){
+        pMapper.load("maps/map.json");
+    }
+}
+*/
+/*
+let pMapper; // mapper instance
+let myQuad; // one face
+let ballx;
+let noise;
+let x1;
+
+function setup() {
+    // p5.mapper needs WEBGL in createCanvas
+    createCanvas(windowWidth, windowHeight, WEBGL);
+    // create the mapper
+    pMapper = createProjectionMapper(this);
+    // create one quad surface
+    myQuad = pMapper.createQuadMap(400, 400);
+    // if you want to position items in your sketch
+    // do so with the quad you're targeting
+    ballx = myQuad.width/2;
+}
+
+function draw() {
+    background(0);
+    //pass the name of a drawing function into displaySketch()
+    myQuad.displaySketch(myDrawing);
+}
+
+// p5.mapper passes an offscreen canvas (mySketch) into this function
+function myDrawing(mySketch) {
+    // anything drawn on this surface needs 'mySketch.' in front of it
+    mySketch.background("orange");
+    mySketch.stroke(0);
+    mySketch.strokeWeight(4);
+    mySketch.line(0, 0, 400, 400); // diagonal line across the quad
+    mySketch.noStroke();
+    mySketch.fill(noise(map(offset)(255)));
+    mySketch.ellipse(ballx, myQuad.height/2, 150);
+     x1 = noise(map(offset*uniqueAngel*s) * width);
+    ballx += 1;
+    if(ballx>myQuad.width+75)ballx=-75;
+}
+function keyPressed(){
+switch(key) {
+    case "c":
+        pMapper.toggleCalbiration();
+        break;
+    case "f":
+        let fs = fullscreen();
+        fullscreen(!fs);
+        break;
+    case "s":
+        pMapper.load("maps/map.json");
+        break;
+    case "s":
+        pMapper.save("map.json");
+        break;
+}
+}
+*/
 let pMapper;
 let doorQuad, Quad2, Quad3, Quad4;
 let myDoor;
 let inc = 20;
 let unicornX = []; //make array of unicorns for the screen
 let unicornY = [];
-let totalUnicorns = 15;
+let totalUnicorns = 65;
 
 class Door { 
   constructor(x, y, w, h) {
@@ -196,12 +309,13 @@ function Sketch3(pg) {
   pg.textSize(pulseSize); //makes the emoji pulse
 
   // Render emoji onto the offscreen graphics buffer
-  pg.text("😈f", pg.width / 2, pg.height / 2); //i used emojis for this time kinda spooky halloween
+  pg.text("😈 BLEHJAHDJ", pg.width / 2, pg.height / 2); //i used emojis for this time kinda spooky halloween
 }
 
 // Quad 4 Sketch: Reusing the Door Sketch
 function Sketch4(pg) {
   renderDoorSketch(pg);
+  pg.fill(this.col, 200, 255);
 }
 
 function draw() {
