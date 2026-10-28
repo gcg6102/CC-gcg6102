@@ -5,8 +5,10 @@ async function setup() {
   createCanvas(windowWidth, windowHeight);
   pixelDensity(1);
     //lucky = await loadImage("assets/lucky.png");
+  
   if(lucky.width > width) lucky.resize(width,0);
   if(lucky.height > height) lucky.resize(0,height); //adjusts the image within the canvas so it is sized correctly
+  
   print("Original size: " + lucky.width + " , " + lucky.height);
   noLoop();
 }
@@ -14,6 +16,9 @@ async function setup() {
 function draw(){
   background(0);
   image(lucky, 0, 0);
+  //translate(mouseX, mouseY);
+  //imageMode(CENTER); //just center the image
+  
 }
 
 //loading image in p5.js
