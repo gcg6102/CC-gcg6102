@@ -327,6 +327,7 @@ function draw() {
   Quad3.displaySketch(Sketch3);
   Quad4.displaySketch(Sketch4);
 }
+//do map.json inside directory so that you can save fonts, photos, data, and callibration
 
 function keyPressed() {
   if (key === 'c' || key === 'C') {
