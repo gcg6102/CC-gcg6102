@@ -54,6 +54,7 @@ function keyPressed(){
     }
 }
 */
+/*
 let pMapper; // mapper instance
 let myQuad; // one face
 let ballx;
@@ -108,4 +109,119 @@ switch(key) {
         pMapper.save("map.json");
         break;
 }
+}
+*/
+let pMapper;
+let doorQuad, Quad2, Quad3, Quad4;
+let myDoor;
+let inc = 20;
+let unicornX = []; //make array of unicorns for the screen
+let unicornY = [];
+let totalUnicorns = 15;
+
+class Door { 
+  constructor(x, y, w, h) {
+    this.x = x; //classes that allows values for each dimension of the door
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.col = random(255); //random color
+  }
+
+  move(maxW) {
+    this.x = this.x + 1; //changes the position in the x direction
+    if (this.x > maxW) {
+      this.x = 0;
+    }
+  }
+
+  show(pg) {
+    pg.fill(this.col, 200, 255);
+
+    for (let i = 0; i < pg.height * 2 + inc; i += inc) {
+      pg.line(0, pg.height - i, i, pg.height); 
+    }
+
+    pg.rect(this.x, this.y, this.w, this.h); //the door
+    pg.ellipse(this.w / 2 + 165, this.h / 2 + 150, 10, 20); //a door knob
+    pg.arc(190, 150, 80, 80, PI, 0); //i wanted a door arc that fits the door makes it so the half circle its curcves on the top and flat on the bottom
+  }
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+
+  pMapper = createProjectionMapper(this);
+
+  // Create four projection mapping quads
+  doorQuad = pMapper.createQuadMap(400, 400);
+  Quad2 = pMapper.createQuadMap(400, 400); 
+  Quad3 = pMapper.createQuadMap(400, 400);
+  Quad4 = pMapper.createQuadMap(400, 400);
+  //creates each quad
+
+  myDoor = new Door(150, 150, 80, 200); //an object instance of door
+   for (let i = 0; i < totalUnicorns; i++) {
+    unicornX.push(random(30, 370)); // Keep within 400x400 buffer bounds
+    unicornY.push(random(30, 370));
+  }
+}
+
+// Quad 1 Sketch: Moving Door
+function renderDoorSketch(pg) {
+  pg.background(20, 255, 255);
+  myDoor.show(pg); //connects show function and move to the door
+  myDoor.move(pg.width);
+}
+
+// Quad 2 Sketch: Solid Color Surface
+function Sketch2(pg) { //essentially the same as coding functions, put parings objects dot pg
+  pg.background("lightgreen"); //function for quad 2 i turned it to be lime green
+  pg.textSize(60);
+  pg.text("🦄", 200, 200); 
+   for (let i = 0; i < totalUnicorns; i++) {
+    pg.text("🦄", unicornX[i], unicornY[i]);
+  }
+}
+
+// Quad 3 Sketch: Animated emoji
+function Sketch3(pg) {
+  pg.background(50, 50, 200);
+
+  // Center alignment so the emoji grows from the middle
+  pg.textAlign(CENTER, CENTER);
+
+  // Calculate dynamic font size using the sine wave formula
+  let pulseSize = 100 + sin(frameCount * 0.05) * 50;
+  pg.textSize(pulseSize); //makes the emoji pulse
+
+  // Render emoji onto the offscreen graphics buffer
+  pg.text("😈f", pg.width / 2, pg.height / 2); //i used emojis for this time kinda spooky halloween
+}
+
+// Quad 4 Sketch: Reusing the Door Sketch
+function Sketch4(pg) {
+  renderDoorSketch(pg);
+}
+
+function draw() {
+  background(0);
+
+  // Display sketches onto their quads
+  doorQuad.displaySketch(renderDoorSketch);
+  Quad2.displaySketch(Sketch2);
+  Quad3.displaySketch(Sketch3);
+  Quad4.displaySketch(Sketch4);
+}
+
+function keyPressed() {
+  if (key === 'c' || key === 'C') {
+    pMapper.toggleCalibration();
+  }
+  if (key === 's' || key === 'S') {
+    pMapper.save();
+  }
+  if (key === 'f' || key === 'F') {
+    fullscreen(!fullscreen());
+  }
 }
