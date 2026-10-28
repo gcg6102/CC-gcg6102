@@ -57,7 +57,7 @@ async function setup(){
   vid = await createVideo("assets/puppy.mov");
   vid.autoplay();
   vid.volume(0);
-  vid.hide(); //commenting out hide puts videos on twice html video component necessary to embed a video on your page vs. the p5.js canvas need to join them
+  vid.hide(); //commenting out hide puts videos on twice (hides it from the browser) html video component necessary to embed a video on your page vs. the p5.js canvas need to join them
   vid.loop();
 }
 
