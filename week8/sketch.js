@@ -1,10 +1,10 @@
 let lucky;
 
 async function setup() {
-  lucky = await loadImage("assets/lucky.jpg);
+  lucky = await loadImage("assets/lucky.png);
   createCanvas(windowWidth, windowHeight);
   pixelDensity();
-  print(:Original size: " + lucky.width + " , " + doggo.height;
+  print(:Original size: " + lucky.width + " , " + lucky.height;
   noLoop();
 }
 
