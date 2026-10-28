@@ -57,11 +57,24 @@ async function setup(){
   vid = await createVideo("assets/puppy.mov");
   vid.autoplay();
   vid.volume(0);
-  vid.hide(); //commenting out hide puts videos on twice (hides it from the browser) html video component necessary to embed a video on your page vs. the p5.js canvas need to join them
+  vid.hide(); //commenting out hide puts videos on twice html video component necessary to embed a video on your page vs. the p5.js canvas need to join them
   vid.loop();
 }
 
 function draw(){
   background(220);
   image(vid, 0, 0);
+  vid.loadPixels();
+
+  for(let i = 0; i < vid.pixels.length; i += 4){
+    let r = vid.pixels[i]; 
+    let g = vid.pixels[i + 1];
+    let b = vid.pixels[i + 2];
+  }
+  if(r < 110 && g < 110 && b < 110){
+    vid.pixels[i] == 255; //if pixel less than ___ set pixel in array to 255;
+  }
 }
+
+//ask questions about array how can i change values before i render it out
+
