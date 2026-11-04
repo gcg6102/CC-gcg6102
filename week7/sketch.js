@@ -82,13 +82,13 @@ function draw() {
 // p5.mapper passes an offscreen canvas (mySketch) into this function
 function myDrawing(mySketch) {
     // anything drawn on this surface needs 'mySketch.' in front of it
-    mySketch.background("orange");
+    mySketch.background("");
     mySketch.stroke(0);
     mySketch.strokeWeight(4);
     mySketch.line(0, 0, 400, 400); // diagonal line across the quad
     mySketch.noStroke();
     mySketch.fill(noise(map(offset)(255)));
-    mySketch.ellipse(ballx, myQuad.height/2, 150);
+    mySketch.triangle(ballx, myQuad.height/2, 150);
      x1 = noise(map(offset*uniqueAngel*s) * width);
     ballx += 1;
     if(ballx>myQuad.width+75)ballx=-75;
