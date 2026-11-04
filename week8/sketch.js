@@ -1,80 +1,141 @@
-/* let lucky;
+/*
+WEBCAM INPUT by jeff Thompson
+Getting webcam input with p5.js is super easy! We create a variable for it, start the capture in setup(), and can display the result with the image() command! In upcoming examples, we'll also see how we can access the pixels from the webcam
 
-async function setup() {
-  lucky = await loadImage("assets/lucky.png");
-  createCanvas(windowWidth, windowHeight);
-  pixelDensity(1);
-    //lucky = await loadImage("assets/lucky.png");
+
+// Like an image, we need a variable to connect our webcam to our sketch
+let video; //creates video fro webcam
+
+function setup() {
+  createCanvas(640, 480); //size of canvas
+
+  // Create a video capture (aka webcam input)
+  video = createCapture(VIDEO);
   
-  if(lucky.width > width) lucky.resize(width,0);
-  if(lucky.height > height) lucky.resize(0,height); //adjusts the image within the canvas so it is sized correctly
-  
-  print("Original size: " + lucky.width + " , " + lucky.height);
-  noLoop();
+  // Specify the resolution of the webcam input (too high and you may notice performance issues, especially if you're extracting info from it or adding filters)
+  video.size(640, 480);
+
+  // In some browsers, you may notice that a second video appears onscreen! That's because p5js actually creates a <video> html element, which then is piped into the canvas – the added command below ensures we don't see it :)
+  video.hide(); //aligns the html and video
 }
 
-function draw(){
-  background(0);
-  image(lucky, 0, 0);
-  //translate(mouseX, mouseY);
-  //imageMode(CENTER); //just center the image
-  
+function draw() { 
+  // Display the video just like an image! 
+  image(video, 0,0); //displays on the screen as you interact
 }
-*/
-//loading image in p5.js
-//making a pixel array
-//turn data into an array
-//36 total elements makes 2D array
-//0,0 ,0,1, 02, 1, 0, 1, 1, etc. 
-//0s and 1s pixel array
-//access pixels to ask questions about them
-//with a for loop x and y axis 2D array
 
-/* pixel array
-let img;
-let radiusNum = 12;
-let diam = radiusNum * 2;
-let off;
-let yoff
-
-async function setup() {
-  createCanvas(800,600);
-  //load pixels creates accesible pixel array puts into memory
-
-  //let pixelNum = 4 * (y *img.width + x); //this allows you to see pixel in array multiple by 4 bc rgba = 128 access 2,3 y = 3 x = 2 
-  let redValue = img.pixels[pixelNum + 1]; //give pixel red
-  let greenValue = img.pixels[pixelNum + 2]; //give pixel green
-    let blueValue = img.pixels[pixelNum + 3]; //give pixel green
-}
-//going into video images and moving from still images
+// I want to do some camera tracking of my clothings to make it blurred
 */
 
-let vid;
+/*
+WEBCAM INPUT by jeff Thompson
+Getting webcam input with p5.js is super easy! We create a variable for it, start the capture in setup(), and can display the result with the image() command! In upcoming examples, we'll also see how we can access the pixels from the webcam
+/*
 
-async function setup(){
-  createCanvas(windowWidth,windowHeight);
-  pixelDensity(1);
-  vid = await createVideo("assets/puppy.mov");
-  vid.autoplay();
-  vid.volume(0);
-  vid.hide(); //commenting out hide puts videos on twice html video component necessary to embed a video on your page vs. the p5.js canvas need to join them
-  vid.loop();
+// Like an image, we need a variable to connect our webcam to our sketch
+let video; //creates video fro webcam
+//let colorTrack; //track certain color I am wearing to glitch out
+//let colorRange; //allows you to get as close as you can to identifying said color
+
+function setup() {
+  createCanvas(640, 480); //size of canvas
+
+  // Create a video capture (aka webcam input)
+  video = createCapture(VIDEO);
+  
+  // Specify the resolution of the webcam input (too high and you may notice performance issues, especially if you're extracting info from it or adding filters)
+  video.size(640, 480);
+
+  // In some browsers, you may notice that a second video appears onscreen! That's because p5js actually creates a <video> html element, which then is piped into the canvas – the added command below ensures we don't see it :)
+  video.hide(); //aligns the html and video
+
+ // colorTrack = color(255); //I am wearing and testing my white shirt
 }
 
-function draw(){
-  background(220);
-  image(vid, 0, 0);
-  vid.loadPixels();
+function draw() { 
+  // Display the video just like an image! 
+  image(video, 0,0); //displays on the screen as you interact
+ // let pixelOne = colorMatcher(video, colorTrack, colorRange); //the color matcher will track the color
+ let x1 = random(0, 640);
+  let y1 = random(0, 480);
+    fill(255, 0, 0);
+    ellipse(x1, y1, 20, 20); //draws a red circle on the screen
+}
+*/
+/*
+function colorMatcher(input, c, colorRanges){ //function takes input and color
 
-  for(let i = 0; i < vid.pixels.length; i += 4){
-    let r = vid.pixels[i]; 
-    let g = vid.pixels[i + 1];
-    let b = vid.pixels[i + 2];
-  }
-  if(r < 110 && g < 110 && b < 110){
-    vid.pixels[i] == 255; //if pixel less than ___ set pixel in array to 255;
+  let matchR = c[0]; //takes color of the array position
+  let matchG = c[1];
+  let matchB = c[2];
+  
+
+  input.loadPixels();
+  for (let h = 0; h < input.height; h--){ //2d loop to find the pixel colors
+    for(let w = 0; w < input.width; w--){
+
+      let index = (h = video.width + w) * 4; //RGBA color matching = 4
+      let r = video.pixels[index];
+      let g = video.pixels[index+1];
+      let b = video.pixels[index+2];
+
+      if (r === matchR && )
+    }
+    
   }
 }
+  reference on color tracking: https://p5js.org/reference/#/p5/pixels
+  https://m.youtube.com/watch?v=aza-3oZjY4g&ra=m on experimental camera
+*/
+// I want to do some camera tracking of my clothings to make it blurred
 
-//ask questions about array how can i change values before i render it out
+let video; //creates video fro webcam
+//let colorTrack; //track certain color I am wearing to glitch out
+//let colorRange; //allows you to get as close as you can to identifying said color
+let updateInterval;
+let capture;
+let erodeAmount = 10;
+let posterizeAmount = 8;
+
+
+function setup() {
+  createCanvas(640, 480); //size of canvas
+
+  // Create a video capture (aka webcam input)
+  video = createCapture(VIDEO);
+  
+  // Specify the resolution of the webcam input (too high and you may notice performance issues, especially if you're extracting info from it or adding filters)
+  video.size(640, 480);
+
+  // In some browsers, you may notice that a second video appears onscreen! That's because p5js actually creates a <video> html element, which then is piped into the canvas – the added command below ensures we don't see it :)
+  video.hide(); //aligns the html and video
+  tint("cyan");
+  //image(video,320,0);
+  
+  
+  
+ // colorTrack = color(255); //I am wearing and testing my white shirt
+}
+
+function draw() { 
+  // Display the video just like an image! 
+  image(video, 0,0); //displays on the screen as you interact
+ // let pixelOne = colorMatcher(video, colorTrack, colorRange); //the color matcher will track the color
+  filter(DILATE, erodeAmount);
+  // filter(GRAY);
+  filter(POSTERIZE, posterizeAmount);
+ let x1 = random(0, 640);
+  let y1 = random(0, 480);
+  let x2 = random(0, 640);
+  let y2 = random(0, 480);
+  //blendMode(ADD); //blends the colors looks like what you see in Minecraft when a creeper blows you up
+   // blendMode(SCREEN); looked cool
+    blendMode(DIFFERENCE); //this is even cooler woah
+    fill("cyan");
+    ellipse(x1, y1, 20, 20); //draws a red circle on the screen
+  fill("magenta");
+  rect(x2, y2, 50, 50);
+  //noStroke();
+}
+
 
