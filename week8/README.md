@@ -60,6 +60,4 @@ To start a new paragraph, leave an empty line between two lines of text.
 
 This is a new paragraph.
 
-When making my clock, I wanted to be symbolic about perlin noise. I decided to make an angel number clock.
-//Stylings CSS porfolio
-//Fix the 
+I've actaully read "In Defense of the poor image" before in my School for poetic computation course called "Imperfect Pictures." I am thinking about creating some form of minecraft type of art, which used the poor image to make block-like designs without being copyrighted. Also, poor images can be an indication of nostalgia and memeory, especailly embodying playing video games in the early 2000s and 90s. I am looking for the poor image as a form of distraction, but also reference to memory. I initally amde a sketch that will read color combiantions, but then I noticed that I want to explore how different shapes create different outfit combinations by the poor image of my own objects, giving them another meaning, but still fuzzy familiarity.
