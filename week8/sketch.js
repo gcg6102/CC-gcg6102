@@ -186,6 +186,9 @@ let updateInterval;
 let capture;
 let erodeAmount = 10;
 let posterizeAmount = 8;
+let t = "ASDFGHJKL;"
+let x;
+let y;
 
 
 function setup() {
@@ -225,11 +228,12 @@ function draw() {
     blendMode(EXCLUSION);
     blend(video, 0, 0, 100, 100, 100, 50, 300, 500, EXCLUSION); //creates a particular box for the affects
     //blendMode(BURN);
+  x = mouseX;
+  y = mouseY;
+  text(t,x,y);
     fill("cyan");
     ellipse(x1, y1, 20, 20); //draws a red circle on the screen
   fill("magenta");
   rect(x2, y2, 50, 50);
   //noStroke();
 }
-
-
