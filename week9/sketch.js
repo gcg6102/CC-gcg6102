@@ -1,7 +1,5 @@
-/*
- * 👋 Hello! This is an ml5.js example made and shared with ❤️.
- * Learn more about the ml5.js project: https://ml5js.org/
- * ml5.js license and Code of Conduct: https://github.com/ml5js/ml5-next-gen/blob/main/LICENSE.md
+
+ /* ml5.js license and Code of Conduct: https://github.com/ml5js/ml5-next-gen/blob/main/LICENSE.md
  *
  * This example demonstrates keypoint tracking of facial features on live video through ml5.faceMesh.
  */
@@ -21,6 +19,8 @@ async function setup() {
   video.hide();
 
   faceMesh.detectStart(video, gotFaces);
+  tint("yellow");
+  filter(BLUR);
 }
 
 function draw() {
@@ -83,7 +83,9 @@ function draw() {
       push(); 
       stroke(0); 
       strokeWeight(10); 
-      ellipse(face.lips.x+ 35,face.lips.y,60,PI,PI);
+      noFill();
+      //ellipse(face.lips.x+ 35,face.lips.y,60,PI,PI);
+      arc(face.lips.x+35,face.lips.y, 40, 20, PI, 0); //makes upside down arc for moustache
 
       pop();
  
