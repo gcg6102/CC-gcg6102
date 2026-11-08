@@ -237,3 +237,4 @@ function draw() {
   rect(x2, y2, 50, 50);
   //noStroke();
 }
+//essentially using math formulas to blend the pixels on the screen

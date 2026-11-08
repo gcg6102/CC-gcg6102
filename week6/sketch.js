@@ -112,9 +112,21 @@ function draw(){
     offset = offset + 0.001; //increment offset
    // noFill();
     //strokeWeight();
-    fill("white");
-    stroke("black");
+   //fill("white");
+    //stroke("black");
+
+     let c = color(255,253,230); //halo off white
+     //let c = color(random(254,255), random(245,255), random(0,255)); 
+    
+
+ //use your p5.js clicks button to calculate one's angel
+
+    strokeWeight(1)
+    stroke(c);
+    c.setAlpha(1);
+    fill(c);
     bezier(width/2, height/2, x2, y2, x3, y3, x4,y4);
+    //bezier(width/2, height/2, x2, y2, x3, y3, x4,y4);
     //bezier(x1i, x2*i, x3*i, x4*i, y1*i, y2*i, y3*i, y4*i);
 
     //noise is values 0 to 1, so need another value to increase the noise
