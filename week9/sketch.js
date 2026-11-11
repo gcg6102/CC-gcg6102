@@ -113,7 +113,7 @@ let options = { maxFaces: 1, refineLandmarks: false, flipHorizontal: false };
 
 
 async function setup() {
-  createCanvas(640, 480);
+  createCanvas(windowWidth, windowHeight);
 
 //song = await loadSound ("MillennialOptimism.mp3");
   //sound not working
