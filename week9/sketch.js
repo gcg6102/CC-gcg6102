@@ -259,7 +259,7 @@ function draw() {
   circle(bottomLip.x,bottomLip.y,16);
 
    // are the fingers close together?
-    if(dist(topLip.x, bottomLip.y, topLip.y, bottomLip.x)<90){ //if the distance is a certain length, then the millennial optimism will turn on
+    if(dist(topLip.x, bottomLip.y, topLip.y, bottomLip.x)<50){ //if the distance is a certain length, then the millennial optimism will turn on
       filter(POSTERIZE, 5);
       tint("yellow");
      // if(!song.isPlaying()){
