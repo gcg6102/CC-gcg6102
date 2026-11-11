@@ -139,6 +139,7 @@ function draw() {
     strokeWeight(20);
     circle(50, 50, 200);
     text('😆',10,100);
+    text('millennial optimism', 50, 100);
       textSize(100);
   }
     function Moondraw(){
@@ -147,6 +148,7 @@ function draw() {
       strokeWeight(20);
       circle(50, 50, 200);
       text('😞',10,100);
+      text('millennial saddness', 50, 100);
       textSize(100);
   }
 
