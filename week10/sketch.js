@@ -1,384 +1,316 @@
-
- /* ml5.js license and Code of Conduct: https://github.com/ml5js/ml5-next-gen/blob/main/LICENSE.md
- *
- * This example demonstrates keypoint tracking of facial features on live video through ml5.faceMesh.
- */
-
+// Promise.all() loads files in parallel, so setup() waits only as long as the slowest file.
 /*
+let Song1, Song2, Song3, song;
+let currentSound = null;
+let fft;
+let rms;
+let amp;
 
-let faceMesh;
-let video;
-let faces = [];
-let options = { maxFaces: 1, refineLandmarks: false, flipHorizontal: false };
+// volume
 
 async function setup() {
-  createCanvas(640, 480);
+  createCanvas(600, 800);
+  
+  [Song1, Song2, Song3] = await Promise.all([
+    loadSound('Countdown.mp3'),
+    loadSound('HSM.mp3'),
+  loadSound('CoconutWater.mp3')
+  ]);
 
-  faceMesh = await ml5.faceMesh(options);
+  //used 
 
-  video = createCapture(VIDEO);
-  video.size(640, 480);
-  video.hide();
+   fft = new p5.FFT(128);
+  Song2.connect(fft);
+  Song3.connect(fft);
 
-  faceMesh.detectStart(video, gotFaces);
-  tint("yellow");
-  filter(BLUR);
-}
+  
+    textAlign(CENTER, CENTER);
+    textSize(32);
+    // init buttons
+   // Create UI buttons for track playback and pitch/frequency rate adjustment
+    playSong1Btn = createButton('▶ Countdown');
+    playSong1Btn.position(280, 433);
+  playSong1Btn.size(40,2);
+    playSong1Btn.mousePressed(() => playTrack(Song1));
 
-function draw() {
-  // draw the webcam video
-  image(video, 0, 0, width, height);
+  playSong2Btn = createButton('▶ HSM');
+  playSong2Btn.position(198, 433);
+  playSong2Btn.size(40,2);
+  playSong2Btn.mousePressed(() => playTrack(Song2));
 
-    // draw the faces' bounding boxes
-  for (let j = 0; j < faces.length; j++) {
-    let face = faces[j];
+   playSong3Btn = createButton('▶ Coconut Water');
+  playSong3Btn.position(353, 433);
+   playSong3Btn.size(40,2);
+  playSong3Btn.mousePressed(() => playTrack(Song3));
 
-    strokeWeight(5);
-    // draw the lips
-    stroke(255, 0, 255);
-    for (let i = 0; i < face.lips.keypoints.length; i++) {
-      let keypoint = face.lips.keypoints[i];
-      let x = keypoint.x;
-      let y = keypoint.y;
-      point(x, y);
-    }
+  highPitchBtn = createButton('High Pitch');
+  highPitchBtn.position(200, 370);
+  highPitchBtn.mousePressed(() => changeSpeed(1.5));
+
+  normalPitchBtn = createButton('Normal Speed');
+  normalPitchBtn.position(310, 370);
+  normalPitchBtn.mousePressed(() => changeSpeed(1.0));
    
-    // draw the left eye
-    stroke(255, 255, 0);
-    for (let i = 0; i < face.leftEye.keypoints.length; i++) {
-      let keypoint = face.leftEye.keypoints[i];
-      let x = keypoint.x;
-      let y = keypoint.y;
-      point(x, y);
-    }
-    // draw the left eyebrow
-    stroke(0, 255, 0);
-    for (let i = 0; i < face.leftEyebrow.keypoints.length; i++) {
-      let keypoint = face.leftEyebrow.keypoints[i];
-      let x = keypoint.x;
-      let y = keypoint.y;
-      point(x, y);
-    }
-    // draw the right eye
-    stroke(0, 255, 255);
-    for (let i = 0; i < face.rightEye.keypoints.length; i++) {
-      let keypoint = face.rightEye.keypoints[i];
-      let x = keypoint.x;
-      let y = keypoint.y;
-      point(x, y);
-    }
-    // draw the right eyebrow
-    stroke(0, 0, 255);
-    for (let i = 0; i < face.rightEyebrow.keypoints.length; i++) {
-      let keypoint = face.rightEyebrow.keypoints[i];
-      let x = keypoint.x;
-      let y = keypoint.y;
-      point(x, y);
-    }
 
-    
- // Inside your draw() loop: 
-    if (faces.length > 0) { // 1\. Grab the first face object from the faces array 
-      let face = faces[0];// 2\. Extract the eye objects safely 
-      let lips = face.lips; //declare the lip area
-       
-      push(); 
-      stroke(0); 
-      strokeWeight(10); 
-      noFill();
-      //ellipse(face.lips.x+ 35,face.lips.y,60,PI,PI);
-      arc(face.lips.x+35,face.lips.y, 40, 20, PI, 0); //makes upside down arc for moustache
 
-      pop();
- 
-    }
+}
+function playTrack(track) {
+  if (currentSound && currentSound.isPlaying()) {
+   // currentSound.stop();
+  }
+  currentSound = track;
+  currentSound.play();
+  }
 
- // Inside your draw() loop: 
-    if (faces.length > 0) { // 1\. Grab the first face object from the faces array 
-      let face = faces[0];// 2\. Extract the eye objects safely 
-      let leftEye = face.leftEyebrow; //declare both eyes
-      let rightEye = face.rightEyebrow;
-     
-      push(); 
-      stroke(0); 
-      strokeWeight(3); 
-      noFill();
-      //doing it at the eyebrows makes it look more accurate than on the top of the eyes
-      rect(face.leftEyebrow.x,face.leftEyebrow.y,80,50,20);
-      rect(face.rightEyebrow.x,face.rightEyebrow.y,80,50,20);
-      //use snippet for drawing glasses https://editor.p5js.org/haiyiii/sketches/rJ1NREEqZ
-      line(face.rightEyebrow.x+32,face.rightEyebrow.y,face.leftEyebrow.x+50,face.leftEyebrow.y);
-      pop(); 
-
-      
-    }
-
+function changeSpeed(rateVal) {
+  if (currentSound) {
+    currentSound.rate(rateVal); // Adjusts playback speed and frequency pitch together
   }
 }
 
-function gotFaces(results) {
-  faces = results;
+  //disney music player edit didn't work as a png only works if it's shaped a specific way couldn't remove background
+   // disneyImage = await loadImage("DisneyMusicPlayer.png");
+
+
+function draw() {
+  background(240);
+  textAlign(CENTER, CENTER);
+  textSize(18);
+  fill(30);
+  //text('press 1 for Countdown, 2 for All in this together', 300, 150)
+ // image(disneyImage,150,50,300,300)
+
+   //analyzer = new p5.Amplitude(); //amplitude analyzer p5.js website so that I can link it to sound
+   
+  //https://p5js.org/examples/Sound-Measuring-Amplitude/
+
+  //let spectrum = fft.analyze();
+
+  // Extract bass (low) and treble (high) frequency energy (0.0 to 1.0)
+  
+  push();
+  fill(127);
+  stroke(0);
+  pop();
+
+  textAlign(CENTER);
+
+  // Draw an ellipse with size based on volume
+  ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
+
+  musicPlayer();
+  textSize(10);
+  fill("cyan");
+  text('music player', 300, 330);
+
+   let level = amp.getLevel(); 
+
+  // Map level to spiral spacing
+  let spiralTightness = map(level, 0, 0.3, 2, 20);
+
+  stroke(255);
+  beginShape();
+
+  // Draw spiral
+  for (let a = 0; a < angle; a += 0.1) {
+    let r = spiralTightness * a;
+    let x = r * cos(a);
+    let y = r * sin(a);
+    vertex(x, y);
+  }
+
+  endShape();
+
+  // Increase angle, audio affects speed
+  angle += 0.1 + level * 5;
+
+
 }
 
+function musicPlayer(){
+  //fill(0);
+  //ellipse(width/2,height/2,300,300);
+  fill(240,150,220);
+  
+  //torus(30,15,5);
+  ellipse(width/2,height/2,300,300);
+  arc(width/2,height/2,250,250,100,180, 120)
+
+  //heart shape from p5.js: https://editor.p5js.org/monicamonin/sketches/hWHc3EuFh
+  //line(width/2+40,height/2+60,10,10);
+     fill(0);
+    //triangle(width/2,height/2,58,20,86,75);
+  //cd speakers
+   ellipse(width/2+100,height/2+10,20,20);
+  ellipse(width/2+60,height/2+10,20,20);
+   ellipse(width/2+20,height/2+10,20,20);
+    ellipse(width/2-20,height/2+10,20,20);
+  ellipse(width/2-60,height/2+10,20,20);
+  ellipse(width/2-100,height/2+10,20,20);
+   rect(width/2-110,height/2+30,50,20);
+  rect(width/2-25,height/2+30,50,20);
+  rect(width/2+50,height/2+30,50,20);
+  ellipse(width/2,height/2-70,160,80,6);
+  //lady bug spots
+  //disney princess cd player
+}
 */
-  
 
-  // id we have only one face, draw the eyes
-  /*
-  if(faces.length == 1) {
-    let leftEye = faces[0].leftEye.keypoints;
-    let rightEye = faces[0].rightEye.keypoints;
-    fill(255);
-    stroke(0);
-    // draw left eye
-    // i know the eyes have 17 keypoints each
-    beginShape();
-    for(let i = 0; i<8;i++){
-      vertex(leftEye[i].x,leftEye[i].y);
-    }
-    for(let i = 16;i>7;i--){
-      vertex(leftEye[i].x,leftEye[i].y);
-    }
-    endShape();
-    // draw pupil
 
-    // draw right eye
-    beginShape();
-    for(let i = 0; i<8;i++){
-      vertex(rightEye[i].x,rightEye[i].y); //saves each point of the facial section to begin the shape around the mesh
-    }
-    for(let i = 16;i>7;i--){
-      vertex(rightEye[i].x,rightEye[i].y); //saves each point of the facial section to begin the shape around the mesh
-    }
-    endShape();
-    // draw pupil
-    fill(150, 0, 0);
-    */
-   // noStroke();
-    //eye ellipse(faces[0].leftEye.centerX, faces[0].leftEye.centerY, 8,8);
-    // eye ellipse(faces[0].rightEye.centerX, faces[0].rightEye.centerY, 8,8);
-  //}
 
-  /*
- * 👋 Hello! This is an ml5.js example made and shared with ❤️.
- * Learn more about the ml5.js project: https://ml5js.org/
- * ml5.js license and Code of Conduct: https://github.com/ml5js/ml5-next-gen/blob/main/LICENSE.md
- *
- * This example demonstrates keypoint tracking of facial features on live video through ml5.faceMesh.
- */
-//Millenial Optimism Facial Recongition
+let Song1, Song2, Song3;
+let currentSound = null;
+let fft;
+let amp;
+let angle = 0; // Declared globally for the spiral rotation
 
-let faceMesh;
-let video;
-let faces = [];
-let lipsExterior;
-let song;
-let options = { maxFaces: 1, refineLandmarks: false, flipHorizontal: false };
-
+// UI Buttons
+let playSong1Btn, playSong2Btn, playSong3Btn;
+let highPitchBtn, normalPitchBtn;
 
 async function setup() {
-  createCanvas(640, 480);
+  createCanvas(600, 800);
 
-//song = await loadSound ("MillennialOptimism.mp3");
-  //sound not working
+  // Load sound files concurrently using async/await
+  [Song1, Song2, Song3] = await Promise.all([
+    loadSound('Countdown.mp3'),
+    loadSound('HSM.mp3'),
+    loadSound('CoconutWater.mp3')
+  ]);
 
-  faceMesh = await ml5.faceMesh(options);
+  // 1. Initialize FFT analyzer and connect songs
+  fft = new p5.FFT(128);
+  Song1.connect(fft);
+  Song2.connect(fft);
+  Song3.connect(fft);
 
-  video = createCapture(VIDEO);
-  video.size(640, 480);
-  video.hide();
+  // 2. Initialize Amplitude meter and connect songs
+  amp = new p5.Amplitude();
+  Song1.connect(amp);
+  Song2.connect(amp);
+  Song3.connect(amp);
 
-  faceMesh.detectStart(video, gotFaces);
-  //tint("yellow");
- // filter(BLUR);
+  // Initialize playback buttons
+   playSong1Btn = createButton('▶ Countdown');
+    playSong1Btn.position(280, 433);
+  playSong1Btn.size(40,2);
+    playSong1Btn.mousePressed(() => playTrack(Song1));
+
+  playSong2Btn = createButton('▶ HSM');
+  playSong2Btn.position(198, 433);
+  playSong2Btn.size(40,2);
+  playSong2Btn.mousePressed(() => playTrack(Song2));
+
+   playSong3Btn = createButton('▶ Coconut Water');
+  playSong3Btn.position(353, 433);
+   playSong3Btn.size(40,2);
+  playSong3Btn.mousePressed(() => playTrack(Song3));
+
+  highPitchBtn = createButton('High Pitch');
+  highPitchBtn.position(200, 370);
+  highPitchBtn.mousePressed(() => changeSpeed(1.5));
+
+  normalPitchBtn = createButton('Normal Speed');
+  normalPitchBtn.position(310, 370);
+  normalPitchBtn.mousePressed(() => changeSpeed(1.0));
+   
+}
+
+function playTrack(track) {
+  if (currentSound && currentSound.isPlaying()) {
+    //currentSound.stop();
+  }
+  currentSound = track;
+  currentSound.play();
+}
+
+function changeSpeed(rateVal) {
+  if (currentSound) {
+    currentSound.rate(rateVal);
+  }
 }
 
 function draw() {
-  // draw the webcam video
-  image(video, 0, 0, width, height);
+  background(240);
 
-  function Sundraw(){
-    fill("yellow");
-    stroke("orange");
-    strokeWeight(20);
-    circle(50, 50, 200);
-    text('😆',10,100);
-      textSize(100);
+  // 3. Read the amplitude volume level (0.0 to 1.0)
+  let level = amp.getLevel();
+  let rms = level; // Assign rms for shape sizing
+
+  // Draw volume-reactive pulsing circle
+  push();
+  fill(240, 150, 220, 150);
+  stroke(0);
+  ellipse(width / 2, height / 2 - 120, 20 + rms * 250, 20 + rms * 250);
+  pop();
+
+  // Draw audio-reactive spiral
+  push();
+  translate(width / 2, height / 2 - 120);
+  let spiralTightness = map(level, 0, 0.4, 2, 18);
+
+  //stroke(30);
+  stroke("cyan")
+  strokeWeight(10);
+  noFill();
+  beginShape();
+  for (let a = 0; a < angle; a += 0.1) {
+    let r = spiralTightness * a;
+    let x = r * cos(a);
+    let y = r * sin(a);
+    vertex(x, y);
   }
-    function Moondraw(){
-      fill("255");
-      stroke("darkblue");
-      strokeWeight(20);
-      circle(50, 50, 200);
-      text('😞',10,100);
-      textSize(100);
-  }
+  endShape();
+  pop();
 
+  // Rotate spiral faster when sound gets louder
+  angle += 0.05 + level * 3;
 
-    // are the lips close together?
-   // if(dist(lipMovetop, lipMovebtoom,10,10)<30){
-    //  tint("yellow", 5);
-   // }
-    
-    // draw the index and thumb
+  // Draw the CD player graphics
 
-
-    // draw the faces' bounding boxes
-  for (let j = 0; j < faces.length; j++) {
-    let face = faces[j];
-
-    strokeWeight(5);
-    // draw the lips
-    stroke(255, 0, 255);
-    for (let i = 0; i < face.lips.keypoints.length; i++) {
-      let keypoint = face.lips.keypoints[i];
-      let x = keypoint.x;
-      let y = keypoint.y;
-      point(x, y);
-    }
-   
-    // draw the left eye
-    stroke(255, 255, 0);
-    for (let i = 0; i < face.leftEye.keypoints.length; i++) {
-      let keypoint = face.leftEye.keypoints[i];
-      let x = keypoint.x;
-      let y = keypoint.y;
-      point(x, y);
-    }
-    // draw the left eyebrow
-    stroke(0, 255, 0);
-    for (let i = 0; i < face.leftEyebrow.keypoints.length; i++) {
-      let keypoint = face.leftEyebrow.keypoints[i];
-      let x = keypoint.x;
-      let y = keypoint.y;
-      point(x, y);
-    }
-    // draw the right eye
-    stroke(0, 255, 255);
-    for (let i = 0; i < face.rightEye.keypoints.length; i++) {
-      let keypoint = face.rightEye.keypoints[i];
-      let x = keypoint.x;
-      let y = keypoint.y;
-      point(x, y);
-    }
-    // draw the right eyebrow
-    stroke(0, 0, 255);
-    for (let i = 0; i < face.rightEyebrow.keypoints.length; i++) {
-      let keypoint = face.rightEyebrow.keypoints[i];
-      let x = keypoint.x;
-      let y = keypoint.y;
-      point(x, y);
-    }
-
-      
- // Inside your draw() loop: 
-    if (faces.length > 0) { // 1\. Grab the first face object from the faces array 
-      let face = faces[0];// 2\. Extract the eye objects safely 
-      let faceOval = face.faceOval; //declare the face oval area
-       
-      push(); 
-      stroke(15); 
-      strokeWeight(10); 
-      noFill();
-      //ellipse(face.lips.x+ 35,face.lips.y,60,PI,PI);
-      //not working curveVertex(face.lips.x,face.lips.y);
-     // beginShape();
-      //vertex(150,250);
-      //arc(face.faceOval.x+35,face.faceOval.y, 40, 20, PI, 0);
-      //let a = face.keypoints[];
-     // let y = 26;
-
-     // fill(133,94,66);
-      fill(0);
-      ellipse(face.faceOval.x+60,face.faceOval.y+8, 250, 70, 0);   
-      fill(0);
-      //fill(133,94,66);
-       rect(face.faceOval.x + 10,face.faceOval.y-60, 100, 70, 15, 15);   
-    // arc(face.faceOval.x+60,face.faceOval.y,80,80,20);
-     // line(face.faceOval[x], face.faceOval[y], 80, 400);
-      //makes upside down arc for moustache
-      //endShape(CLOSE);
-      //i decided to look up the points of the face to figure out where to place each part of the face mask facial landmarks
-      
-      pop();
  
-    }
 
-    
- // Inside your draw() loop: 
-    if (faces.length > 0) { // 1\. Grab the first face object from the faces array 
-      let face = faces[0];// 2\. Extract the eye objects safely 
-      let lips = face.lips; //declare the lip area
-
-    let topLip = face.keypoints[13];
-    let bottomLip = face.keypoints[14];
-  fill(0, 255, 255); //light blue and purple indicator
-  stroke("purple");
-  circle(topLip.x,topLip.y,16);
-  circle(bottomLip.x,bottomLip.y,16);
-
-   // are the fingers close together?
-    if(dist(topLip.x, bottomLip.y, topLip.y, bottomLip.x)>120){ //if the distance is a certain length, then the millennial optimism will turn on
-      filter(POSTERIZE, 5);
-      tint("yellow");
-     // if(!song.isPlaying()){
-     // song.play(); //play 
-      //isPlaying = true;
-      //}
-      //video.play();
-      //millenial optimism song
-      Sundraw();
-    }
-    else{
-      noTint(); //tint was being weird
-      //song.stop(); //stop playing music
-      Moondraw();
-     // song.pause();
-     // isPlaying = false;
-    }
-      //took snippet from class code to do testing of distance between keypoints
-
-      //code from face emsh from the coding train for top and bottom lip
-  
-       
-      push(); 
-      stroke(0); 
-      strokeWeight(10); 
-      noFill();
-      //ellipse(face.lips.x+ 35,face.lips.y,60,PI,PI);
-      //not working curveVertex(face.lips.x,face.lips.y);
-        arc(face.lips.x+35,face.lips.y, 40, 20, PI, 0); //makes upside down arc for moustache
-
-      pop();
- 
-    }
-
- // Inside your draw() loop: 
-    if (faces.length > 0) { // 1\. Grab the first face object from the faces array 
-      let face = faces[0];// 2\. Extract the eye objects safely 
-      let leftEye = face.leftEyebrow; //declare both eyes
-      let rightEye = face.rightEyebrow;
-     
-      push(); 
-      stroke(0); 
-      strokeWeight(3); 
-      noFill();
-      //doing it at the eyebrows makes it look more accurate than on the top of the eyes
-      
-      rect(face.leftEyebrow.x,face.leftEyebrow.y,70,50,25);
-      rect(face.rightEyebrow.x,face.rightEyebrow.y,70,50,25);
-      //use snippet for drawing glasses https://editor.p5js.org/haiyiii/sketches/rJ1NREEqZ
-      line(face.rightEyebrow.x+32,face.rightEyebrow.y,face.leftEyebrow.x+50,face.leftEyebrow.y);
-      pop(); 
-
-      
-    }
-
-  }
-  
+  // Label text
+  musicPlayer();
+   textSize(10);
+  fill("lightblue");
+  text('music player', 270, 330);
 }
 
 
-function gotFaces(results) {
-  faces = results;
+function musicPlayer(){
+  //fill(0);
+  //ellipse(width/2,height/2,300,300);
+  fill(240,150,220);
+  
+  //torus(30,15,5);
+  ellipse(width/2,height/2,300,300);
+  arc(width/2,height/2,250,250,100,180, 120)
+
+  //heart shape from p5.js: https://editor.p5js.org/monicamonin/sketches/hWHc3EuFh
+  //line(width/2+40,height/2+60,10,10);
+     fill(0);
+    //triangle(width/2,height/2,58,20,86,75);
+  //cd speakers
+   ellipse(width/2+100,height/2+10,20,20);
+  ellipse(width/2+60,height/2+10,20,20);
+   ellipse(width/2+20,height/2+10,20,20);
+    ellipse(width/2-20,height/2+10,20,20);
+  ellipse(width/2-60,height/2+10,20,20);
+  ellipse(width/2-100,height/2+10,20,20);
+   rect(width/2-110,height/2+30,50,20);
+  rect(width/2-25,height/2+30,50,20);
+  rect(width/2+50,height/2+30,50,20);
+  ellipse(width/2,height/2-70,160,80,6);
+  //lady bug spots
+  //disney princess cd player
 }
+
+
+//help with LLM for energy function and integrate amp
+
+
+
+//trying to draw a ladybug was ahrd, then I tried to make a dither edit of my music player to then put on the screen and that failed, so i used primitives and text and an arc to make the music player, then i ran into the issue of the create a button only working below the canvas, so then i had to figure it out above the canvas
+
+

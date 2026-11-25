@@ -1,11 +1,18 @@
-
- /* ml5.js license and Code of Conduct: https://github.com/ml5js/ml5-next-gen/blob/main/LICENSE.md
+<<<<<<< HEAD
+//move net body
+//organizes the body with points and comes back in a big array to organize the body
+//tells us how confident sketch is 
+/*
+=======
+/*
+ * 👋 Hello! This is an ml5.js example made and shared with ❤️.
+ * Learn more about the ml5.js project: https://ml5js.org/
+ * ml5.js license and Code of Conduct: https://github.com/ml5js/ml5-next-gen/blob/main/LICENSE.md
  *
  * This example demonstrates keypoint tracking of facial features on live video through ml5.faceMesh.
  */
 
-/*
-
+>>>>>>> fc49682 (connection)
 let faceMesh;
 let video;
 let faces = [];
@@ -21,8 +28,6 @@ async function setup() {
   video.hide();
 
   faceMesh.detectStart(video, gotFaces);
-  tint("yellow");
-  filter(BLUR);
 }
 
 function draw() {
@@ -85,9 +90,7 @@ function draw() {
       push(); 
       stroke(0); 
       strokeWeight(10); 
-      noFill();
-      //ellipse(face.lips.x+ 35,face.lips.y,60,PI,PI);
-      arc(face.lips.x+35,face.lips.y, 40, 20, PI, 0); //makes upside down arc for moustache
+      ellipse(face.lips.x+ 35,face.lips.y,60,PI,PI);
 
       pop();
  
@@ -120,7 +123,7 @@ function gotFaces(results) {
   faces = results;
 }
 
-*/
+
   
 
   // id we have only one face, draw the eyes
@@ -158,8 +161,19 @@ function gotFaces(results) {
     //eye ellipse(faces[0].leftEye.centerX, faces[0].leftEye.centerY, 8,8);
     // eye ellipse(faces[0].rightEye.centerX, faces[0].rightEye.centerY, 8,8);
   //}
+<<<<<<< HEAD
+/*
 
-  /*
+// Callback function for when faceMesh outputs data
+function gotFaces(results) {
+  // Save the output to the faces variable
+  faces = results;
+  // console.log(faces);
+}
+
+*/
+
+/*
  * 👋 Hello! This is an ml5.js example made and shared with ❤️.
  * Learn more about the ml5.js project: https://ml5js.org/
  * ml5.js license and Code of Conduct: https://github.com/ml5js/ml5-next-gen/blob/main/LICENSE.md
@@ -203,7 +217,10 @@ function draw() {
     strokeWeight(20);
     circle(50, 50, 200);
     text('😆',10,100);
-      textSize(100);
+    textSize(20);
+    text('millennial optimism', 100, 100);
+    textSize(100);
+      
   }
     function Moondraw(){
       fill("255");
@@ -211,6 +228,8 @@ function draw() {
       strokeWeight(20);
       circle(50, 50, 200);
       text('😞',10,100);
+      textSize(20);
+      text('millennial saddness', 100, 100);
       textSize(100);
   }
 
@@ -318,7 +337,7 @@ function draw() {
   circle(bottomLip.x,bottomLip.y,16);
 
    // are the fingers close together?
-    if(dist(topLip.x, bottomLip.y, topLip.y, bottomLip.x)>120){ //if the distance is a certain length, then the millennial optimism will turn on
+    if(dist(topLip.x, bottomLip.y, topLip.y, bottomLip.x)<50){ //if the distance is a certain length, then the millennial optimism will turn on
       filter(POSTERIZE, 5);
       tint("yellow");
      // if(!song.isPlaying()){
@@ -382,3 +401,6 @@ function draw() {
 function gotFaces(results) {
   faces = results;
 }
+=======
+>>>>>>> fc49682 (connection)
+
